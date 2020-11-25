@@ -1,1 +1,57 @@
-// Arquivo de CSS
+/* Arquivo de CSS */
+
+@font-face{
+    font-family: Nunito;
+    src: url(./fonts/Nunito-Bold.ttf);
+}
+
+/*IDS*/
+
+#inicio{
+    text-align: Center;
+}
+#minhas_viagens{
+    font-family: Nunito;
+    text-align: center;
+}
+#minha_conta{
+    font-family: Nunito;
+    text-align: center;
+}
+
+/*TAGS*/
+header{
+    background-color: #FFFFFF;
+}
+body{
+    background-color: #D6D6D6;    
+}
+nav{
+    display: inline;
+}
+h1{
+    text-align: center;
+    font-family: Nunito;
+    color: #333333;
+}
+a{
+    color: #333333;
+}
+input{
+    background-color: #EFF1F8;
+    margin: none;
+    padding: 10px;
+    font-family: Nunito;
+    border-radius: 5px;
+}
+p{
+    font-family: Nunito;
+}
+/*CLASS*/
+
+#busca_voo{
+    background-repeat: repeat;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin: 30px;
+}

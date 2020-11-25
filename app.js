@@ -1,8 +1,12 @@
 new Vue({
     el: '#vue-app',
+    data: {
+
+    },
     methods:{
-        greet: function(){
-            return alert("Teste");
-        }
+        
+    },
+    computed:{
+        
     }
 });

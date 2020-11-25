@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=”stylesheet” type=”text/css” href=”style.css”>
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <script src="https://unpkg.com/vue"></script>
     <title>Time To Travel</title>
 </head>
+<header>
+    <nav id="menu"> 
+        <a href="" id="inicio"><img src="./img/inicio.png"></a>
+        <a href="" id="minhas_viagens"><img src="./img/minhas_viagens.png">Minhas Viagens</a>
+        <a href="" id="minha_conta" class="w3-rigth"><img src="./img/minha_conta.png">Minha Conta</a>
+    </nav>
+</header>
 <body>
     <div id="vue-app">
-
-
+        <h1>Encontre Passagens Aéreas!</h1>
+        <div id="busca_voo">
+            <img src="./img/buscar_voo.png">
+            <div>
+                <input id="ida" placeholder="Ida">
+                <input id="volta" placeholder="Volta">
+            </div>
+            <div>
+                <input id="qtd_adulto" placeholder="Adultos">
+                <input id="qtd_crianca" placeholder="Crianças">
+            </div>
+            <div>
+                <p>Ida:</p>
+                <input type="date" id="data_ida" name="data_ida">
+                <p>Volta:</p>
+                <input type="date" id="data_volta" name="data_volta">
+            </div>
+        </div>
     </div>
 
 
