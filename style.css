@@ -1,57 +1,83 @@
 /* Arquivo de CSS */
 
-@font-face{
-    font-family: Nunito;
-    src: url(./fonts/Nunito-Bold.ttf);
+@font-face {
+  font-family: Nunito;
+  src: url(./fonts/Nunito-Bold.ttf);
 }
 
 /*IDS*/
 
-#inicio{
-    text-align: Center;
+body {
+  margin: 0;
 }
-#minhas_viagens{
-    font-family: Nunito;
-    text-align: center;
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
-#minha_conta{
-    font-family: Nunito;
-    text-align: center;
+
+#menu .links,
+#menu .links a {
+  display: flex;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+#menu .links a:hover {
+  color: #ff5929;
+}
+
+#menu .links a img {
+  padding-right: 10px;
+}
+
+#inicio {
+  text-align: Center;
+}
+#minhas_viagens {
+  font-family: Nunito;
+  text-align: center;
+}
+#minha_conta {
+  font-family: Nunito;
+  text-align: center;
 }
 
 /*TAGS*/
-header{
-    background-color: #FFFFFF;
+header {
+  background-color: #ffffff;
 }
-body{
-    background-color: #D6D6D6;    
+body {
+  background-color: #d6d6d6;
 }
-nav{
-    display: inline;
+nav {
+  display: inline;
 }
-h1{
-    text-align: center;
-    font-family: Nunito;
-    color: #333333;
+h1 {
+  text-align: center;
+  font-family: Nunito;
+  color: #333333;
 }
-a{
-    color: #333333;
+a {
+  color: #333333;
 }
-input{
-    background-color: #EFF1F8;
-    margin: none;
-    padding: 10px;
-    font-family: Nunito;
-    border-radius: 5px;
+input {
+  background-color: #eff1f8;
+  margin: none;
+  padding: 10px;
+  font-family: Nunito;
+  border-radius: 5px;
 }
-p{
-    font-family: Nunito;
+p {
+  font-family: Nunito;
 }
 /*CLASS*/
 
-#busca_voo{
-    background-repeat: repeat;
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    margin: 30px;
+#busca_voo {
+  background-repeat: repeat;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 30px;
 }
