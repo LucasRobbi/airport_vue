@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./src/style.css">
     <script src="https://unpkg.com/vue"></script>
     <title>Time To Travel</title>
@@ -21,21 +22,21 @@
 </header>
 
 <body>
-    <div id="vue-app">
+    <div class="container" id="vue-app">
         <h1>Encontre Passagens Aéreas!</h1>
-        <div id="busca_voo">
-            <img id="imgbusca" src="./img/buscar_voo.png">
-            <div id="aeroportos">
+        <div class="row" id="busca_voo">
+            <img class="col-3" id="imgbusca" src="./img/buscar_voo.png">
+            <div class="col-3" id="aeroportos">
                 <p>Aeroportos</p>
                 <input id="partida" placeholder="Partida">
                 <input id="destino" placeholder="Destino">
             </div>
-            <div id="ocupantes">
+            <div class="col-2" id="ocupantes">
                 <p>Passagens</p>
                 <input id="adultos" placeholder="Adultos" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 <input id="criancas" placeholder="Crianças" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
-            <div id="data">
+            <div class="col-3" id="data" class="col md-12">
                 <p>Ida</p>
                 <input type="date" id="data_ida" name="data_ida">
                 <p>Volta</p>
