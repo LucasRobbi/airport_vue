@@ -1,0 +1,179 @@
+/* Arquivo de CSS */
+
+@font-face {
+  font-family: Nunito;
+  src: url(./fonts/Nunito-Black.ttf);
+  src: url(./fonts/Nunito-BlackItalic.ttf);
+  src: url(./fonts/Nunito-Bold.ttf);
+  src: url(./fonts/Nunito-BoldItalic.ttf);
+  src: url(./fonts/Nunito-ExtraBold.ttf);
+  src: url(./fonts/Nunito-ExtraBoldItalic.ttf);
+  src: url(./fonts/Nunito-ExtraLight.ttf);
+  src: url(./fonts/Nunito-ExtraLightItalic.ttf);
+  src: url(./fonts/Nunito-Italic.ttf);
+  src: url(./fonts/Nunito-Light.ttf);
+  src: url(./fonts/Nunito-LightItalic.ttf);
+  src: url(./fonts/Nunito-Regular.ttf);
+  src: url(./fonts/Nunito-SemiBold.ttf);
+  src: url(./fonts/Nunito-SemiBoldItalic.ttf);
+}
+
+body {
+  margin: 0;
+}
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#menu .links,
+#menu .links a {
+  display: flex;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+#menu .links a:hover {
+  color: #ff5929;
+}
+
+#menu .links a img {
+  padding-right: 10px;
+}
+
+#inicio {
+  text-align: Center;
+}
+#minhas_viagens {
+  font-family: Nunito;
+  text-align: center;
+}
+#minha_conta {
+  font-family: Nunito;
+  text-align: center;
+}
+#busca_voo {
+  background-repeat: repeat;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 30px;
+}
+
+#busca_voo{
+  display: flex;
+  justify-content: space-evenly;
+}
+#imgbusca{
+  display: flex;
+  justify-content: flex-start;
+}
+#aeroportos,
+#ocupantes,
+#data{
+  display: block;
+  justify-content: space-around;
+  
+  padding: 20px;
+}
+
+#partida{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  background-image: url("./imgcss/partida.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 5px;
+  width: 300px;
+  padding-left: 35px;
+  border: none;
+}
+#destino{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  background-image: url("./imgcss/destino.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 5px;
+  width: 300px;
+  padding-left: 35px;
+  border: none;
+}
+
+#adultos{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  padding-left: 30px;
+  background-image: url("./imgcss/adultos.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 5px;
+  width: 150px;
+  border: none;
+}
+
+#criancas{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  padding-left: 30px;
+  background-image: url("./imgcss/criancas.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 5px;
+  width: 150px;
+  border: none;
+}
+#data_ida,
+#data_volta{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: none;
+  width: 150px;
+}
+
+#buscar{
+  width: 300px;
+  height: 30px;
+  background-color: #ffa251;
+  border-radius: 5px;
+  color: #eff1f8;
+  border: none;
+  background-image: url("./imgcss/buscar.png");
+  background-repeat: no-repeat;
+  background-position-x: 100px;
+  background-position-y: center;
+}
+
+header {
+  background-color: #ffffff;
+}
+body {
+  background-color: #d6d6d6;
+}
+h1 {
+  text-align: center;
+  font-family: Nunito;
+  color: #333333;
+}
+a {
+  color: #333333;
+}
+input {
+  background-color: #eff1f8;
+  margin: none;
+  padding: 10px;
+  font-family: Nunito;
+  border-radius: 5px;
+}
+p {
+  font-family: Nunito;
+}
+
+

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./src/style.css">
     <script src="https://unpkg.com/vue"></script>
     <title>Time To Travel</title>
 </head>
@@ -24,20 +24,24 @@
     <div id="vue-app">
         <h1>Encontre Passagens Aéreas!</h1>
         <div id="busca_voo">
-            <img src="./img/buscar_voo.png">
-            <div>
-                <input id="ida" placeholder="Ida">
-                <input id="volta" placeholder="Volta">
+            <img id="imgbusca" src="./img/buscar_voo.png">
+            <div id="aeroportos">
+                <p>Aeroportos</p>
+                <input id="partida" placeholder="Partida">
+                <input id="destino" placeholder="Destino">
             </div>
-            <div>
-                <input id="qtd_adulto" placeholder="Adultos">
-                <input id="qtd_crianca" placeholder="Crianças">
+            <div id="ocupantes">
+                <p>Passagens</p>
+                <input id="adultos" placeholder="Adultos" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input id="criancas" placeholder="Crianças" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
-            <div>
-                <p>Ida:</p>
+            <div id="data">
+                <p>Ida</p>
                 <input type="date" id="data_ida" name="data_ida">
-                <p>Volta:</p>
+                <p>Volta</p>
                 <input type="date" id="data_volta" name="data_volta">
+                <br>
+                <button id="buscar">Buscar</button>
             </div>
         </div>
     </div>
