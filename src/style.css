@@ -45,11 +45,9 @@
   text-align: Center;
 }
 #minhas_viagens {
-  font-family: Nunito;
   text-align: center;
 }
 #minha_conta {
-  font-family: Nunito;
   text-align: center;
 }
 #busca_voo {
@@ -57,6 +55,7 @@
   background-color: #ffffff;
   border-radius: 20px;
   margin: 30px;
+  padding: 15px;
   display: flex;
   justify-content: space-evenly;
   min-width: 300px;
@@ -144,18 +143,37 @@
     width: auto;
     height: auto;
 }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 header {
+  font-family: Nunito;
   background-color: #ffffff;
 }
 body {
+  font-family: Nunito;
   background-color: #d6d6d6;
-  
+}
+footer{
+  font-family: Nunito; 
 }
 h1 {
   margin: 20px;
   text-align: center;
-  font-family: Nunito;
   color: #333333;
+}
+h3{
+  
+  padding-left: 60px;
+}
+h4{
+  
+  padding-left: 80PX;
+  font-size: 20px;
 }
 a {
   color: #333333;
@@ -164,9 +182,5 @@ input {
   background-color: #eff1f8;
   margin: none;
   padding: 10px;
-  font-family: Nunito;
   border-radius: 5px;
-}
-p {
-  font-family: Nunito;
 }

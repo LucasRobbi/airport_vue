@@ -9,14 +9,15 @@
     <script src="https://unpkg.com/vue"></script>
     <title>Time To Travel</title>
 </head>
+
 <header>
     <nav id="menu">
         <div class="logo">
-            <a href="" id="inicio"><img src="./img/inicio.png"></a>
+            <a href="./index.html" id="inicio"><img src="./img/inicio.png"></a>
         </div>
         <div class="links">
-            <a href="" id="minhas_viagens"><img src="./img/minhas_viagens.png">Minhas Viagens</a>
-            <a href="" id="minha_conta" class="w3-rigth"><img src="./img/minha_conta.png">Minha Conta</a>
+            <a href="./minhas_viagens.html" id="minhas_viagens"><img src="./img/minhas_viagens.png">Minhas Viagens</a>
+            <a href="./minha_conta.html" id="minha_conta" class="w3-rigth"><img src="./img/minha_conta.png">Minha Conta</a>
         </div>
     </nav>
 </header>
@@ -25,26 +26,35 @@
     <div class="container" id="vue-app">
         <h1>Encontre Passagens Aéreas!</h1>
         <div class="row" id="busca_voo">
+
             <img class="col-3" id="imgbusca" src="./img/buscar_voo.png">
+
             <div class="col-3" id="aeroportos">
                 <p>Aeroportos</p>
                 <input id="partida" placeholder="Partida">
                 <input id="destino" placeholder="Destino">
             </div>
+
             <div class="col-2" id="ocupantes">
                 <p>Passagens</p>
-                <input id="adultos" placeholder="Adultos" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input id="adultos"  placeholder="Adultos"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 <input id="criancas" placeholder="Crianças" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
+
             <div class="col-3" id="data" class="col md-12">
                 <p>Ida</p>
                 <input type="date" id="data_ida" name="data_ida">
                 <p>Volta</p>
                 <input type="date" id="data_volta" name="data_volta">
                 <br>
-                <button id="buscar">Buscar</button>
+                <a href="./resultados.html"><button id="buscar">Buscar</button></a>
             </div>
         </div>
+
+        <h3>Onde vamos agora?</h3>
+        <h4>Descubra sua próxima aventura!</h4>
+
+        <div class="" id=""></div>
     </div>
 
 
