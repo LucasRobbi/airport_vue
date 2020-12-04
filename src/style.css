@@ -72,7 +72,7 @@
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  background-image: url("./imgcss/partida.png");
+  background-image: url("./img/partida.png");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -84,7 +84,7 @@
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  background-image: url("./imgcss/destino.png");
+  background-image: url("./img/destino.png");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -98,7 +98,7 @@
   justify-content: space-around;
   margin: 10px;
   padding-left: 30px;
-  background-image: url("./imgcss/adultos.png");
+  background-image: url("./img/adultos.png");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -111,7 +111,7 @@
   justify-content: space-around;
   margin: 10px;
   padding-left: 30px;
-  background-image: url("./imgcss/criancas.png");
+  background-image: url("./img/criancas.png");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -124,6 +124,7 @@
   border: none;
   width: 100%;
 }
+
 
 #buscar{
   width: 100%;
@@ -149,6 +150,49 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+/*MINHAS VIAGENS*/
+#painel_minhas_viagens{
+  display: flex;
+  justify-content: flex-start;
+}
+#texto_painel{
+  font-size: 30px;
+}
+#minhas_viagens_img{
+  padding-left: 80px;
+}
+#sem_viagem{
+  padding-left: 120px;
+  padding-top: 180px;
+  display: block;
+  justify-content: center;
+  text-align: center;
+}
+#iniciobtn{
+  width: 300px;
+  height: 40px;
+  background-color: #ffa251;
+  border-radius: 5px;
+  color: #eff1f8;
+  border: none
+}
+/*MINHA CONTA*/
+#minha_conta_img{
+  padding-left: 80px;
+}
+#painel_conta{
+  display: flex;
+  justify-content: flex-start;
+}
+#dados{
+  padding-top: 100px;
+  padding-left: 80px;
+  display: block;
+  justify-content: space-around;
+  background-color: #eff1f8;
+  border-radius: 15px;
+  width: 800px;
 }
 header {
   font-family: Nunito;
@@ -177,6 +221,7 @@ h4{
 }
 a {
   color: #333333;
+  text-align: center;
 }
 input {
   background-color: #eff1f8;
