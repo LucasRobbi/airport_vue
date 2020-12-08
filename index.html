@@ -37,8 +37,19 @@
 
             <div class="col-2" id="ocupantes">
                 <p>Passagens</p>
-                <input id="adultos"  placeholder="Adultos"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                <input id="criancas" placeholder="Crianças" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <form action="">
+                    <input id="adultos"  placeholder="Adultos"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
+                    <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
+                </form>
+                {{adultos}}
+                <form action="">
+                    <input id="criancas" placeholder="Crianças" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+                    <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
+                    <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
+                </form>
+                {{criancas}}
+                    
             </div>
 
             <div class="col-3" id="data" class="col md-12">
