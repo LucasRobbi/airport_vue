@@ -190,18 +190,18 @@ form {
 }
 /*MINHAS VIAGENS*/
 #painel_minhas_viagens {
-  display: flex;
-  justify-content: flex-start;
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
 }
 #texto_painel {
   font-size: 30px;
 }
 #minhas_viagens_img {
-  padding-left: 80px;
+  padding: 0 80px;
+  max-height: 200px;
 }
 #sem_viagem {
-  padding-left: 120px;
-  padding-top: 180px;
   display: block;
   justify-content: center;
   text-align: center;
@@ -217,14 +217,15 @@ form {
 /*MINHA CONTA*/
 #minha_conta_img {
   padding-left: 80px;
+  max-height: 200px;
 }
 #painel_conta {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 #dados {
-  padding-top: 100px;
-  padding-left: 80px;
+  padding-left: 50px;
   display: block;
   justify-content: space-around;
   background-color: #eff1f8;
@@ -237,7 +238,7 @@ header {
 }
 body {
   font-family: Nunito;
-  background-color: #d6d6d6;
+  background: rgb(243 243 243);
 }
 footer {
   font-family: Nunito;
