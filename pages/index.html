@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../src/style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='../src/img/inicio.ico' />
+    <script src="https://unpkg.com/vue"></script>
+    <title>Time To Travel</title>
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <div class="logo">
+                <a href="./index.html" id="inicio"><img class="logo" src="../src/img/inicio.png"></a>
+            </div>
+            <div class="links">
+                <a href="./minhas_viagens.html" id="minhas_viagens"><img src="../src/img/minhas_viagens.png">Minhas
+                    Viagens</a>
+                <a href="./minha_conta.html" id="minha_conta" class="w3-rigth"><img
+                        src="../src/img/minha_conta.png">Minha Conta</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="vue-app">
+        <h1>Encontre Passagens Aéreas!</h1>
+        <div class="row" id="busca_voo">
+
+            <img class="col-3" id="imgbusca" src="../src/img/buscar_voo.png">
+
+            <div class="col-3" id="aeroportos">
+                <p>Aeroportos</p>
+                <input id="partida" placeholder="Partida">
+                <input id="destino" placeholder="Destino">
+            </div>
+
+            <div class="col-2" id="ocupantes">
+                <p>Passagens</p>
+                <form action="">
+                    <input id="adultos" placeholder="Adultos"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
+                    <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
+                </form>
+                {{adultos}}
+                <form action="">
+                    <input id="criancas" placeholder="Crianças"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                    <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
+                    <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
+                </form>
+                {{criancas}}
+
+            </div>
+
+            <div class="col-3" id="data" class="col md-12">
+                <p>Ida</p>
+                <input type="date" id="data_ida" name="data_ida">
+                <p>Volta</p>
+                <input type="date" id="data_volta" name="data_volta">
+                <br>
+                <a href="./resultados.html"><button id="buscar">Buscar</button></a>
+            </div>
+        </div>
+
+        <h3>Onde vamos agora?</h3>
+        <h4>Descubra sua próxima aventura!</h4>
+
+        <div class="" id=""></div>
+    </div>
+
+
+    <script src="../app.js"></script>
+</body>
+
+</html>
