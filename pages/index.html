@@ -40,20 +40,33 @@
 
             <div class="col-2" id="ocupantes">
                 <p>Passagens</p>
-                <form action="">
-                    <input id="adultos" placeholder="Adultos"
-                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                    <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
-                    <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
-                </form>
-                {{adultos}}
-                <form action="">
-                    <input id="criancas" placeholder="Crianças"
-                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-                    <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
-                    <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
-                </form>
-                {{criancas}}
+                <div class="d-flex justify-content-between">
+                    <p>
+                        <img src="../src/img/icon/iconPessoa.svg" alt="icon de uma Pessoa">
+                        Adultos
+                    </p>
+                    <div class="qtd-stepper">
+                        <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
+                        <span class="mr-2 ml-2">
+                            {{adultos}}
+                        </span>
+                        <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <p>
+                        <img src="../src/img/icon/iconCrianca.svg" alt="icon de uma Criança">
+                        Crianças
+                    </p>
+                    <div class="qtd-stepper">
+                        <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
+                        <span class="mr-2 ml-2">
+                            {{criancas}}
+                        </span>
+                        <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
+                    </div>
+                </div>
 
             </div>
 

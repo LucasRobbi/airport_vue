@@ -66,6 +66,18 @@
   min-width: 300px;
 }
 
+#ocupantes > div {
+  background-color: #eff1f8;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+#ocupantes > div p {
+  margin: 0;
+}
+
 #aeroportos,
 #ocupantes,
 #data {
