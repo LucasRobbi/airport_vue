@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../src/style.css">
     <link rel='shortcut icon' type='image/x-icon' href='../src/img/inicio.ico' />
     <script src="https://unpkg.com/vue"></script>
@@ -13,29 +15,103 @@
 </head>
 
 <body>
-    <header>
-        <nav id="menu">
-            <div class="logo">
-                <a href="./index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
+    <div id="vue-app">
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="close mr-3 mt-2" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-header p-1">
+                        <h5 class="modal-title m-auto">Cadastre-se</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/email.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustomEmail" placeholder="Insira um Email"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um Email.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/fingerprint.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustoCPF" placeholder="Insira seu CPF"
+                            aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um CPF.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/lock.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustomEmail" placeholder="Insira um Email"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um Email.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Cadastre-se</button>
+                    </div>
+                </div>
             </div>
-            <div class="links">
-                <a href="./minhas_viagens.html" id="minhas_viagens"><img src="../src/img/icon/iconViagens.svg">Minhas
-                    Viagens</a>
-                <a href="./minha_conta.html" id="minha_conta" class="w3-rigth"><img src="../src/img/icon/iconUser.svg">Minha Conta</a>
+        </div>
+        <header>
+            <nav id="menu">
+                <div class="logo">
+                    <a href="./index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
+                </div>
+                <div class="links">
+                    <a href="./minhas_viagens.html" id="minhas_viagens"><img
+                            src="../src/img/icon/iconViagens.svg">Minhas
+                        Viagens</a>
+                    <a href="./minha_conta.html" id="minha_conta" class="w3-rigth"><img
+                            src="../src/img/icon/iconUser.svg">Minha Conta</a>
+                </div>
+            </nav>
+        </header>
+        <h1>Minha Conta</h1>
+        <div id="painel_conta">
+            <img id="minha_conta_img" src="../src/img/icon/painelUser.svg">
+            <div id="dados">
+                <p>Nome:</p>
+                <p>Email:</p>
+                <p>CPF:</p>
+                <p>Senha:</p>
             </div>
-        </nav>
-    </header>
-    <h1>Minha Conta</h1>
-    <div id="painel_conta">
-        <img id="minha_conta_img" src="../src/img/icon/painelUser.svg">
-        <div id="dados">
-            <p>Nome:</p>
-            <p>Email:</p>
-            <p>CPF:</p>
-            <p>Senha:</p>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../src/js/login.js"></script>
+    <script src="../app.js"></script>
 </body>
 
 </html>
