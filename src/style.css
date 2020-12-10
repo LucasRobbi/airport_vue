@@ -221,16 +221,25 @@ form {
 }
 #painel_conta {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 70px;
+}
+.my-account{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 #dados {
+  margin-right: 60px;
+  padding: 20px;
   padding-left: 50px;
   display: block;
   justify-content: space-around;
-  background-color: #eff1f8;
+  background-color: #e7ebeb;
   border-radius: 15px;
-  width: 800px;
+  width: 600px;
+  box-shadow: 2px 3px 3px rgb(82, 81, 81);
 }
 header {
   font-family: Nunito;
@@ -264,4 +273,24 @@ input {
   margin: 0;
   padding: 10px;
   border-radius: 5px;
+}
+
+.div-imgs{
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  justify-content: space-evenly;
+  /* width: 100%; */
+}
+
+.arrow-right{
+  float: right;
+  right: 1000px;
+}
+
+.img-edit{
+  width: 150px;
+  height: 150px;
+  /* margin-left: 50px; */
+  border-radius: 10px;
 }
