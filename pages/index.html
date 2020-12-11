@@ -16,22 +16,9 @@
 </head>
 
 <body>
-    <header>
-        <nav id="menu">
-            <div class="logo">
-                <a href="/pages/index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
-            </div>
-            <div class="links">
-                <a href="/pages/minhas_viagens.html" id="minhas_viagens"><img
-                        src="../src/img/icon/iconViagens.svg">Minhas
-                    Viagens</a>
-                <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth"><img
-                        src="../src/img/icon/iconUser.svg">Minha Conta</a>
-            </div>
-        </nav>
-    </header>
-    <div class="custom-container">
-        <div class="container my-container" id="vue-app">
+    <div class="container my-container" id="vue-app">
+        <header-component></header-component>
+        <div class="custom-container">
             <h1>Encontre Passagens Aéreas!</h1>
             <div class="row" id="busca_voo">
 
@@ -78,8 +65,6 @@
                 <div class="col-3" id="data" class="col md-12">
                     <p>Ida</p>
                     <input type="date" id="data_ida" name="data_ida">
-                    <!-- <p>Volta</p>
-                                <input type="date" id="data_volta" name="data_volta"> -->
                     <br>
                     <a href="./resultados.html"><button id="buscar">Buscar</button></a>
                 </div>
@@ -97,6 +82,7 @@
                 <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
                 <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
             </div>
+            <footer-component></footer-component>
         </div>
     </div>
 
@@ -112,12 +98,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="../app.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
-    <!-- <script type="text/javascript" src="slick/slick.min.js"></script> -->
     <script src="../src/js/script.js"></script>
+    <script src="../app.js"></script>
 </body>
 
 </html>
