@@ -22,84 +22,96 @@
                 <a href="/pages/index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
             </div>
             <div class="links">
-                <a href="/pages/minhas_viagens.html" id="minhas_viagens"><img src="../src/img/icon/iconViagens.svg">Minhas
+                <a href="/pages/minhas_viagens.html" id="minhas_viagens"><img
+                        src="../src/img/icon/iconViagens.svg">Minhas
                     Viagens</a>
-                <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth"><img src="../src/img/icon/iconUser.svg">Minha Conta</a>
+                <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth"><img
+                        src="../src/img/icon/iconUser.svg">Minha Conta</a>
             </div>
         </nav>
     </header>
-    <div class="container my-container" id="vue-app">
-        <h1>Encontre Passagens Aéreas!</h1>
-        <div class="row" id="busca_voo">
+    <div class="custom-container">
+        <div class="container my-container" id="vue-app">
+            <h1>Encontre Passagens Aéreas!</h1>
+            <div class="row" id="busca_voo">
 
-            <img class="col-3" id="imgbusca" src="../src/img/icon/painelBuscaVoo.svg">
+                <img class="col-3" id="imgbusca" src="../src/img/icon/painelBuscaVoo.svg">
 
-            <div class="col-3" id="aeroportos">
-                <p>Aeroportos</p>
-                <input id="partida" placeholder="Partida">
-                <input id="destino" placeholder="Destino">
-            </div>
-
-            <div class="col-2" id="ocupantes">
-                <p>Passagens</p>
-                <div class="d-flex justify-content-between">
-                    <p>
-                        <img src="../src/img/icon/iconPessoa.svg" alt="icon de uma Pessoa">
-                        Adultos
-                    </p>
-                    <div class="qtd-stepper">
-                        <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
-                        <span class="mr-2 ml-2">
-                            {{adultos}}
-                        </span>
-                        <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
-                    </div>
+                <div class="col-3" id="aeroportos">
+                    <p>Aeroportos</p>
+                    <input id="partida" placeholder="Partida">
+                    <input id="destino" placeholder="Destino">
                 </div>
 
-                <div class="d-flex justify-content-between">
-                    <p>
-                        <img src="../src/img/icon/iconCrianca.svg" alt="icon de uma Criança">
-                        Crianças
-                    </p>
-                    <div class="qtd-stepper">
-                        <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
-                        <span class="mr-2 ml-2">
-                            {{criancas}}
-                        </span>
-                        <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
+                <div class="col-2" id="ocupantes">
+                    <p>Passagens</p>
+                    <div class="d-flex justify-content-between">
+                        <p>
+                            <img src="../src/img/icon/iconPessoa.svg" alt="icon de uma Pessoa">
+                            Adultos
+                        </p>
+                        <div class="qtd-stepper">
+                            <button class="botao_remove_adulto" v-on:click="remove_adulto">-</button>
+                            <span class="mr-2 ml-2">
+                                {{adultos}}
+                            </span>
+                            <button class="botao_add_adulto" v-on:click="add_adulto">+</button>
+                        </div>
                     </div>
+
+                    <div class="d-flex justify-content-between">
+                        <p>
+                            <img src="../src/img/icon/iconCrianca.svg" alt="icon de uma Criança">
+                            Crianças
+                        </p>
+                        <div class="qtd-stepper">
+                            <button class="botao_remove_crianca" v-on:click="remove_crianca">-</button>
+                            <span class="mr-2 ml-2">
+                                {{criancas}}
+                            </span>
+                            <button class="botao_add_crianca" v-on:click="add_crianca">+</button>
+                        </div>
+                    </div>
+
                 </div>
 
+                <div class="col-3" id="data" class="col md-12">
+                    <p>Ida</p>
+                    <input type="date" id="data_ida" name="data_ida">
+                    <!-- <p>Volta</p>
+                                <input type="date" id="data_volta" name="data_volta"> -->
+                    <br>
+                    <a href="./resultados.html"><button id="buscar">Buscar</button></a>
+                </div>
             </div>
 
-            <div class="col-3" id="data" class="col md-12">
-                <p>Ida</p>
-                <input type="date" id="data_ida" name="data_ida">
-                <!-- <p>Volta</p>
-                <input type="date" id="data_volta" name="data_volta"> -->
-                <br>
-                <a href="./resultados.html"><button id="buscar">Buscar</button></a>
+            <h3>Onde vamos agora?</h3>
+            <h4>Descubra sua próxima aventura!</h4>
+
+            <div class="div-imgs">
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit" src="../src/img/dubai.jpg" alt=""></div>
             </div>
-        </div>
-
-        <h3>Onde vamos agora?</h3>
-        <h4>Descubra sua próxima aventura!</h4>
-
-        <div class="div-imgs">
-            <!-- <div class="imgs-grid"> -->
-                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
-                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
-                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
-                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
-            <!-- </div> -->
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="../app.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
