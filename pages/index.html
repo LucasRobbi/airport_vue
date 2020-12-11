@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../src/style.css">
     <link rel='shortcut icon' type='image/x-icon' href='../src/img/inicio.ico' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <script src="https://unpkg.com/vue"></script>
     <title>Time To Travel</title>
 </head>
@@ -16,16 +19,16 @@
     <header>
         <nav id="menu">
             <div class="logo">
-                <a href="./index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
+                <a href="/pages/index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
             </div>
             <div class="links">
-                <a href="./minhas_viagens.html" id="minhas_viagens"><img src="../src/img/icon/iconViagens.svg">Minhas
+                <a href="/pages/minhas_viagens.html" id="minhas_viagens"><img src="../src/img/icon/iconViagens.svg">Minhas
                     Viagens</a>
-                <a href="./minha_conta.html" id="minha_conta" class="w3-rigth"><img src="../src/img/icon/iconUser.svg">Minha Conta</a>
+                <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth"><img src="../src/img/icon/iconUser.svg">Minha Conta</a>
             </div>
         </nav>
     </header>
-    <div class="container" id="vue-app">
+    <div class="container my-container" id="vue-app">
         <h1>Encontre Passagens Aéreas!</h1>
         <div class="row" id="busca_voo">
 
@@ -82,7 +85,14 @@
         <h3>Onde vamos agora?</h3>
         <h4>Descubra sua próxima aventura!</h4>
 
-        <div class="" id=""></div>
+        <div class="div-imgs">
+            <!-- <div class="imgs-grid"> -->
+                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
+                <div><img class="img-edit slick-slider" src="../src/img/dubai.jpg" alt=""></div>
+            <!-- </div> -->
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -91,6 +101,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../app.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <!-- <script type="text/javascript" src="slick/slick.min.js"></script> -->
+    <script src="../src/js/script.js"></script>
 </body>
 
 </html>

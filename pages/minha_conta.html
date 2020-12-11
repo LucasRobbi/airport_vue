@@ -16,64 +16,8 @@
 
 <body>
     <div id="vue-app">
-        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="close mr-3 mt-2" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-header p-1">
-                        <h5 class="modal-title m-auto">Cadastre-se</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend">
-                                    <img src="../src/img/icon/email.svg" />
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="validationCustomEmail" placeholder="Insira um Email"
-                                aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Selecione um Email.
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend">
-                                    <img src="../src/img/icon/fingerprint.svg" />
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="validationCustoCPF" placeholder="Insira seu CPF"
-                            aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Selecione um CPF.
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend">
-                                    <img src="../src/img/icon/lock.svg" />
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="validationCustomEmail" placeholder="Insira um Email"
-                                aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Selecione um Email.
-                            </div>
-                        </div>
 
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Cadastre-se</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <header>
             <nav id="menu">
                 <div class="logo">
@@ -88,14 +32,86 @@
                 </div>
             </nav>
         </header>
-        <h1>Minha Conta</h1>
+        <!-- <h1>Minha Conta</h1> -->
         <div id="painel_conta">
             <img id="minha_conta_img" src="../src/img/icon/painelUser.svg">
             <div id="dados">
+                <div class="edit-area">
+                    <p class="my-account">Minha Conta</p>
+                    <div class="pensil-div">
+                        <img class="pencil-edit" src="../src/img/pencil.png">
+                    </div>
+                </div>
                 <p>Nome:</p>
                 <p>Email:</p>
                 <p>CPF:</p>
                 <p>Senha:</p>
+
+                <div class="logout-div">
+                    <img src="../src/img/delete.png" class="delete">
+                    <span class="logout">Sair</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="close mr-3 mt-2" onclick="my_account._signInModal._onCancel()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-header p-1">
+                        <h5 class="modal-title m-auto">Cadastre-se</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/email.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustomEmail"
+                                placeholder="Insira um Email" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um Email.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/fingerprint.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustoCPF" placeholder="Insira seu CPF"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um CPF.
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <img src="../src/img/icon/lock.svg" />
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustomEmail"
+                                placeholder="Insira um Email" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Selecione um Email.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            onclick="my_account._signInModal._onCancel()">Cancelar</button>
+                        <button type="button" class="btn btn-primary"
+                            onclick="my_account._signInModal._onLogin()">Cadastre-se</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
