@@ -367,3 +367,88 @@ form {
   color: #000 !important;
   font-size: 25px;
 }
+
+.trips{
+  display: flex;
+  justify-content: center;
+}
+
+.account-card{
+  background-color: rgb(255, 253, 253);
+  width: 900px;
+  height: 300px;
+  padding: 30px;
+  box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.5);
+  border-radius: 10px;
+}
+
+.destination{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.airline-img{
+  /* margin-left: 200px; */
+  width: 40px;
+  height: 40px;
+}
+
+.latam{
+  font-weight: bold;
+}
+
+.dest{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.airline{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.embarque{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 390px;
+  margin-bottom: 30px;
+}
+
+.embarque-texto{
+  font-size: 14px;
+  color:black;
+  font-weight: 300;
+}
+
+.tempo{
+  /* background-color: black; */
+  width:350px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.response{
+  color: #000;
+  margin-left: 10px;
+}
+
+.preco{
+  color: rgb(46, 46, 190);
+  margin-left: 30px;
+}
+
+.cancelamento{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel{
+  cursor: pointer;
+  color: rgb(122, 16, 16)
+}
