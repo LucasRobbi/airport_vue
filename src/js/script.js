@@ -28,16 +28,21 @@ const my_account = {
   },
   _signInModal: {
     init: (isLogged) => {
-      const modalConfig = { backdrop: 'static' }
+      const modalConfig = { backdrop: 'static',  keyboard: false }
       
       if (!isLogged) $("#signInModal").modal(modalConfig);
     },
     _onLogin: () => {
-      $("#signInModal").modal("hide");
+      $("#signInModal, #logInModal").modal("hide");
     },
     _onCancel: () => {
       window.location.replace("/pages/");
     },
+    _logInModal: (show) => {
+      const hide = show === "#signInModal" ? "#logInModal" : "#signInModal"
+      $(hide).modal("hide");
+      $(show).modal("show");
+    }
   },
 };
 
