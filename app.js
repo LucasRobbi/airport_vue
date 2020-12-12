@@ -11,11 +11,12 @@ Vue.component('header-component', {
               <a href="/pages/index.html" id="inicio"><img class="logo" src="../src/img/inicio.ico"></a>
           </div>
           <div class="links">
-              <a href="/pages/minhas_viagens.html" id="minhas_viagens"><img
-                      src="../src/img/icon/iconViagens.svg">Minhas
-                  Viagens</a>
-              <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth"><img
-                      src="../src/img/icon/iconUser.svg">Minha Conta</a>
+              <a href="/pages/minhas_viagens.html" id="minhas_viagens">
+                <img src="../src/img/icon/iconViagens.svg">Minhas Viagens
+              </a>
+              <a href="/pages/minha_conta.html" id="minha_conta" class="w3-rigth">
+                <img src="../src/img/icon/iconUser.svg">Minha Conta
+              </a>
           </div>
       </nav>
     </header>

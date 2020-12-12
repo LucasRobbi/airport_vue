@@ -342,7 +342,6 @@ form {
 
 .div-imgs {
   display: flex;
-  padding: 60px;
   align-items: center;
   justify-content: space-evenly;
   /* width: 100%; */
@@ -360,10 +359,25 @@ form {
 
 .img-edit {
   max-width: 300px;
-  /* margin-left: 50px; */
   border-radius: 10px;
 }
+
+.card {
+  margin: 5px;
+}
+
+.slick-slide  {
+  outline: none;
+}
+
 .slick-prev::before, .slick-next::before {
   color: #000 !important;
   font-size: 25px;
+}
+
+@media (max-width: 1600px) {
+  .custom-container {
+    max-width: 1300px;
+    margin: auto;
+  }
 }
