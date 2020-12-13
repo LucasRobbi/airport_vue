@@ -368,6 +368,10 @@ form {
   margin: 5px;
 }
 
+.card-img-top {
+  max-height: 130px;
+}
+
 .slick-slide  {
   outline: none;
 }
