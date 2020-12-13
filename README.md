@@ -8,6 +8,12 @@ Aplicativo para consulta e agendamento de viagens
 
 A aplicação seria utilizada para agendamento e compra de passagens aéreas. Algumas das entidades do domínio são Flight e User e a compra dessa passagem que é a entidade Ticket.
 
+### Como executar o projeto
+
+Usamos uma extensão chamada Live server, ela permite que execute seu css e js da página html. 
+Para instalar basta ir na página de extensões do visual studio code, procurar por `live server` e instalar.
+Depois entrar no index.html, clicar com o botao direito e selecionar a opção `open with live server` 
+
 ### Banco de Dados
 
 ![Schema do banco](./src/img/bdSchema.png)
