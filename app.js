@@ -1,15 +1,16 @@
 const HeaderComponent = Vue.extend({
   data: () => {},
-  template: "#custom-header"
+  template: "#custom-header",
 });
 
-Vue.component('my-account-component', {
+Vue.component("my-trips-component", {
   template: `
-    <div class="account-card">
+  <div>
+    <div class="account-card mb-5" v-for="myTrip in myTrips">
       <div class="destination">
-        <span class='dest'>São Paulo</span>
+        <span class='dest'>{{myTrip.shipment}}</span>
         <img src="../src/img/icon/go_to.svg" alt="airline" />
-        <span class='dest'>São Paulo</span>
+        <span class='dest'>{{myTrip.destination}}</span>
       </div>
       <div class="airline">
         <img src="../src/img/icon/latam.svg" alt="airline" class="airline-img"/>
@@ -24,17 +25,48 @@ Vue.component('my-account-component', {
       </div>
       <div class="tempo">
         <span class="embarque-texto">Tempo estimado: <span class='response'>24h</span></span>
-        <span class="preco">R$ 2000.00</span>
+        <span class="preco">R$ {{myTrip.ticket_price}}</span>
       </div>
       <div class="cancelamento">
         <span class="cancel">Solicitar cancelamento</span>
       </div>
     </div>
-  `
-})
+  </div>
+  `,
+  data: function () {
+    return {
+      myTrips: [
+        {
+          shipment: "São Paulo",
+          destination: "Rio de Janeiro",
+          ticket_price: 150.0,
+          ship_date: "2020-07-02T03:00:00.000Z",
+          ship_time: "18:00:00",
+          estimated_time: "03:00:00",
+          limit: 46,
+          airline_id: 1,
+          status: "ativo",
+          image: "https://cdn.pixabay.com/photo/2017/01/08/19/30/rio-de-janeiro-1963744_1280.jpg",
+        },
+        {
+          shipment: "São Paulo",
+          destination: "Rio de Janeiro",
+          ticket_price: 150.0,
+          ship_date: "2020-07-02T03:00:00.000Z",
+          ship_time: "18:00:00",
+          estimated_time: "03:00:00",
+          limit: 46,
+          airline_id: 1,
+          status: "ativo",
+          image: "https://cdn.pixabay.com/photo/2017/01/08/19/30/rio-de-janeiro-1963744_1280.jpg",
+        },
+      ],
+    };
+  },
+});
 
-Vue.component('header-component', {
-  template:`
+Vue.component("header-component", {
+  template: `
     <header>
       <nav id="menu">
           <div class="logo">
@@ -51,7 +83,7 @@ Vue.component('header-component', {
       </nav>
     </header>
   `,
-})
+});
 
 new Vue({
   el: "#vue-app",
@@ -72,10 +104,7 @@ new Vue({
     remove_crianca() {
       if (this.criancas >= 1) this.criancas--;
     },
-  }
-
+  },
 });
-
-
 
 Vue.config.devtools = true;
