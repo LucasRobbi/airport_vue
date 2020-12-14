@@ -1,6 +1,6 @@
 
 <template>
-  <div class="suggestionsCards">
+  <div class="suggestionsCards" style='display:flex; flex-direction: row; overflow: scroll;'>
       <div class="card" style="width: 18rem;" v-for="suggestion in suggestions" :key="suggestion.title">
           <img class="card-img-top" :src="suggestion.img" :alt="suggestion.title" />
           <div class="card-body">
@@ -13,10 +13,15 @@
 <script>
 
 
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import Slick from 'vue-slick';
+
 export default {
   name: 'suggestionsCards',
+  // components: { Slick },
   data () {
     return {
+       
       suggestions: [
         {title: "Dublin – Irlanda", img: "https://cdn.pixabay.com/photo/2013/12/18/18/01/bridge-230311_1280.jpg"},
         {title: 'Tanzânia – África', img: "https://cdn.pixabay.com/photo/2014/03/02/18/05/tanzania-278367_960_720.jpg"},
@@ -27,7 +32,7 @@ export default {
       ],
     };
   },
-  methods: {
+ methods: {
   }
 }
 </script>
