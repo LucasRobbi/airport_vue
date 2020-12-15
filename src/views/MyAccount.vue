@@ -1,5 +1,6 @@
 <template>
   <div class="conta">
+    <SignIn/>
     <div id="painel_conta">
       <img id="minha_conta_img" src="../assets/icon/painelUser.svg" />
       <div id="dados">
@@ -25,11 +26,13 @@
 
 <script>
 // @ is an alias to /src
-// import Header from '@/components/Header.vue'
+import SignIn from '@/components/SignIn.vue'
 
 export default {
   name: "conta",
-  components: {},
+  components: {
+    SignIn
+  },
 };
 </script>
 
