@@ -95,6 +95,11 @@
 export default {
   name: "logInModal",
   components: {},
+  data() {
+    return {
+      modalShow: true,
+    };
+  },
 };
 </script>
 

@@ -112,13 +112,14 @@
 
 export default {
   name: "signInModal",
-  components: {
+  components: {},
+  methods: {},
+  data() {
+    return {
+      modalShow: false,
+    };
   },
-  methods: {
-  }
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
