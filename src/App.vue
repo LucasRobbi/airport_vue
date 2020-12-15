@@ -261,14 +261,6 @@ form {
   border-radius: 10px;
 }
 
-.card {
-  margin: 5px;
-}
-
-.card-img-top {
-  max-height: 130px;
-}
-
 .slick-slide  {
   outline: none;
 }
