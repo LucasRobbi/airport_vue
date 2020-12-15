@@ -239,10 +239,6 @@ form {
   border: none;
 }
 
-/*MINHA CONTA*/
-
-
-
 .div-imgs {
   display: flex;
   align-items: center;
