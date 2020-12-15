@@ -96,3 +96,35 @@ export default {
   },
 };
 </script>
+
+<style>
+#data_ida,
+#data_volta {
+  margin-bottom: 10px;
+  border: none;
+  width: 100%;
+}
+
+#buscar {
+  width: 100%;
+  height: 30px;
+  background-color: #ffa251;
+  border-radius: 5px;
+  color: #eff1f8;
+  border: none;
+}
+
+.botao_add_crianca,
+.botao_remove_crianca,
+.botao_add_adulto,
+.botao_remove_adulto {
+  margin-right: 3px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffa251;
+  height: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
+</style>

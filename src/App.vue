@@ -194,53 +194,7 @@ form {
   display: flex;
   justify-content: flex-end;
 }
-.botao_add_crianca,
-.botao_remove_crianca,
-.botao_add_adulto,
-.botao_remove_adulto {
-  margin-right: 3px;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffa251;
-  height: 30px;
-  min-width: 30px;
-  max-width: 30px;
-}
-#adultos {
-  display: flex;
-  justify-content: space-around;
-  margin: 0px;
-  padding-left: 30px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-}
 
-#criancas {
-  display: flex;
-  justify-content: space-around;
-  margin: 0px;
-  padding-left: 30px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-}
-#data_ida,
-#data_volta {
-  margin-bottom: 10px;
-  border: none;
-  width: 100%;
-}
-
-#buscar {
-  width: 100%;
-  height: 30px;
-  background-color: #ffa251;
-  border-radius: 5px;
-  color: #eff1f8;
-  border: none;
-}
 #vue-app {
   margin: 0;
   min-width: 100%;
@@ -252,7 +206,6 @@ form {
   padding-left: 0;
   border-radius: 8%;
 }
-
 .close:hover,
 .close:focus {
   color: black;
@@ -288,71 +241,7 @@ form {
 
 /*MINHA CONTA*/
 
-#minha_conta_img {
-  padding-left: 80px;
-  max-height: 200px;
-}
-#painel_conta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px;
-}
-#painel_conta img {
-  margin-right: 30px;
-}
-.edit-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-right: 3px; */
-}
-.pencil-edit {
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-}
-.my-account {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 25px;
-  margin-right: 20px;
-}
-.logout-div {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-.delete {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-.pensil-div {
-  position: absolute;
-  right: 0;
-  top: 20px;
-}
-.logout {
-  color: rgb(78, 2, 2);
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-#dados {
-  margin-right: 60px;
-  padding: 30px;
-  padding-left: 50px;
-  display: block;
-  justify-content: space-around;
-  background-color: #e7ebeb;
-  border-radius: 15px;
-  width: 600px;
-  box-shadow: 2px 3px 3px rgb(82, 81, 81);
-  position: relative;
-}
+
 
 .div-imgs {
   display: flex;
