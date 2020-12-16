@@ -1,27 +1,9 @@
 <template>
-  <div
-    class="modal fade signInModal"
-    id="signInModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="signInModal"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="d-flex justify-content-end">
-          <button
-            type="button"
-            class="close mr-3 mt-2"
-            onclick="my_account._signInModal._onCancel()"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-header p-1">
-          <h5 class="modal-title m-auto">Cadastre-se</h5>
-        </div>
-        <div class="modal-body">
+  <div>
+    <b-button id="show-btn" @click="showModal">Open Modal</b-button>
+
+    <b-modal ref="signInModal" title="Cadastre-se">
+      <div class="modal-body">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupPrepend">
@@ -77,43 +59,34 @@
             </div>
           </div>
         </div>
-        <div>
+      <div>
           <button
             class="border-0 change-modal m-auto w-100 p-2"
-            onclick="_logInModal('#logInModal')"
           >
             Já tenho cadastro. Entre
           </button>
         </div>
-        <div class="modal-footer d-flex justify-content-between">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-dismiss="modal"
-            onclick="my_account._signInModal._onCancel()"
-          >
-            Cancelar
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            onclick="my_account._signInModal._onLogin()"
-          >
-            Cadastre-se
-          </button>
-        </div>
-      </div>
-    </div>
+    </b-modal>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: "signInModal",
   components: {},
-  methods: {},
+  methods: {
+    showModal() {
+      this.$refs["signInModal"].show();
+    },
+    hideModal() {
+      this.$refs["signInModal"].hide();
+    },
+    toggleModal() {
+      // We pass the ID of the button that we want to return focus to
+      // when the modal has hidden
+      this.$refs["signInModal"].toggle("#toggle-btn");
+    },
+  },
   data() {
     return {
       modalShow: false,
@@ -122,4 +95,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.modal-backdrop{
+  background-color: #3333338c;
+}
+.change-modal {
+  color: #ffa251;
+  font-weight: bold;
+}
+</style>
