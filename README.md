@@ -36,7 +36,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Banco de Dados
 
-![Schema do banco](./src/img/bdSchema.png)
+![Schema do banco](.\src\assets\bdSchema.png)
 
 ### Requisitos
 
