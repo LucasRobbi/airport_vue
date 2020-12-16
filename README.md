@@ -8,11 +8,31 @@ Aplicativo para consulta e agendamento de viagens
 
 A aplicação seria utilizada para agendamento e compra de passagens aéreas. Algumas das entidades do domínio são Flight e User e a compra dessa passagem que é a entidade Ticket.
 
-### Como executar o projeto
+# Como executar o projeto
 
-Usamos uma extensão chamada Live server, ela permite que execute seu css e js da página html. 
-Para instalar basta ir na página de extensões do visual studio code, procurar por `live server` e instalar.
-Depois entrar no index.html, clicar com o botao direito e selecionar a opção `open with live server` 
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 
 ### Banco de Dados
 
@@ -61,3 +81,4 @@ Os protótipos foram desenvolvidos no Figma, e podem ser melhor consultados nos 
 **BP3001636**: Rodrigo Romano Gottardi de Moraes.
 
 **BP3001725**: Lucas Robbi.
+

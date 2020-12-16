@@ -1,0 +1,96 @@
+<template>
+    <div class='purchase'>
+        <div class='destination'>
+            <span class='dest-text'>São Paulo</span>
+            <img src='../assets/icon/go_to.svg' alt='dest'/>
+            <span class='dest-text'>São Paulo</span>
+        </div>
+        <div class="passagens-compra">
+            <span class="passagem">Passagens: </span>
+        </div>
+        <div class="qtd-passagens">
+            <div class="adulto-qtd">
+                <img src="../assets/icon/adult.svg" alt="" class="adult-icon">
+                <span class="adulto-text">1 Adulto</span>
+            </div>
+            <div class="adulto-qtd">
+                <img src="../assets/icon/kid.svg" alt="" class="adult-icon">
+                <span class="adulto-text">1 Criança</span>
+            </div>
+        </div>
+        <div class="embarque-compra">
+            <span class="embarque-texto">Embarque no dia:</span>
+            <span class="preco">21/08</span>
+        </div>
+        <div class="value-info">
+            <div class="embarque-compra">
+                <span class="embarque-texto">valor da passagem:</span>
+                <span class="preco">R$</span>
+            </div>
+            <div class="embarque-compra">
+                <span class="embarque-texto">valor da passagem com desconto:</span>
+                <span class="preco">R$</span>
+            </div>
+            <div class="embarque-compra">
+                <span class="total-value">Total:</span>
+                <span class="preco">R$</span>
+            </div>
+            <div class="tipo-pagamento">
+                <img src="" alt="" class="pagamento">
+                <img src="" alt="" class="pagamento">
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+  name: "Purchase",
+  components: {},
+  data() {
+    return {
+     
+    };
+  },
+};
+</script>
+
+<style>
+.purchase{
+    background-color: white;
+    padding: 50px;
+    width: 800px;
+    height: 500px;
+}
+.destination{
+    display:flex;
+    justify-content: space-between;
+    margin-left: 90px;
+    margin-bottom: 50px;
+}
+.dest-text{
+    font-weight: bold
+}
+.passagens-compra{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.qtd-passagens{
+    display: flex;
+    align-content: flex-start;
+    background-color:  #EFF1F8;
+    width: 150px;
+    height: 60px;
+    flex-direction: column
+}
+.adulto-qtd{
+    display: flex;
+    align-items: center;
+    margin-bottom:5px;
+  
+}
+.adult-icon{
+    margin-right: 10px;
+}
+</style>

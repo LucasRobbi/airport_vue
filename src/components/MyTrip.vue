@@ -41,7 +41,7 @@ export default {
           shipment: "São Paulo",
           destination: "Rio de Janeiro",
           ticket_price: 150.0,
-          ship_date: "2020-07-02T03:00:00.000Z",
+          ship_date: "2020-08-02T03:00:00.000Z",
           ship_time: "18:00:00",
           estimated_time: "03:00:00",
           limit: 46,
