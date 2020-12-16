@@ -55,7 +55,7 @@ const routes = [
     component: AdminNewUser
   },
   {
-    path: '/voo',
+    path: '/voos',
     name: 'AdminTrips',
     component: AdminTrips
   }

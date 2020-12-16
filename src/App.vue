@@ -402,4 +402,16 @@ form {
   cursor: pointer;
   color: rgb(122, 16, 16);
 }
+.form-control.withBorder {
+  border: 1px solid #ced4da;
+}
+.styledContainer {
+  margin-top: 100px;
+  background-color: rgb(255, 253, 253);
+  max-width: 900px;
+  height: auto;
+  padding: 30px;
+  box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.5);
+  border-radius: 10px;
+}
 </style>

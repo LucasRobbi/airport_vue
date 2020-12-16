@@ -7,7 +7,7 @@
         <div class="input-group">
           <input
             type="text"
-            class="form-control nameCompany"
+            class="form-control withBorder"
             placeholder="Nome companhia"
             required
           />
@@ -50,18 +50,6 @@
   justify-content: center;
   align-items: self-start;
   height: 100%;
-}
-.styledContainer {
-  margin-top: 100px;
-  background-color: rgb(255, 253, 253);
-  max-width: 900px;
-  height: auto;
-  padding: 30px;
-  box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.5);
-  border-radius: 10px;
-}
-.newCompanyForm .form-control.nameCompany {
-  border: 1px solid #ced4da;
 }
 .cadastrar {
   width: 100%;

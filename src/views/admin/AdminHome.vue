@@ -6,7 +6,7 @@
         <img src="../../assets/icon/painelAdmin.svg" alt="A aventura chama" id="imgPainel" />
       </div>
       <div class="links d-flex flex-column">
-        <router-link to="/voo"><button class="acess">Lista de Voos</button></router-link>
+        <router-link to="/voos"><button class="acess">Lista de Voos</button></router-link>
         <router-link to="/nova-companhia"
           ><button class="acess">Cadastre uma Companhia</button></router-link
         >
