@@ -303,11 +303,6 @@ form {
   right: 1000px;
 }
 
-.custom-container {
-  max-width: 1400px;
-  margin: auto;
-}
-
 .img-edit {
   max-width: 300px;
   border-radius: 10px;
@@ -406,12 +401,5 @@ form {
 .cancel {
   cursor: pointer;
   color: rgb(122, 16, 16);
-}
-
-@media (max-width: 1600px) {
-  .custom-container {
-    max-width: 1300px;
-    margin: auto;
-  }
 }
 </style>
