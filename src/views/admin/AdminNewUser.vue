@@ -34,6 +34,5 @@
   border-radius: 5px;
   color: #eff1f8;
   border: none;
-  margin: 10px;
 }
 </style>

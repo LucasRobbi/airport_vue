@@ -4,7 +4,21 @@
       <h1>Companhia Aérea</h1>
       <p>Pesquise pelo nome da companhia</p>
       <div class="newCompanyForm">
-        <input type="text" class="form-control nameCompany" placeholder="Nome companhia" required />
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control nameCompany"
+            placeholder="Nome companhia"
+            required
+          />
+          <div class="input-group-prepend">
+            <span class="input-group-text searchBtn" id="inputGroupPrepend">
+              <button>
+                <img src="../../assets/icon/search.svg" />
+              </button>
+            </span>
+          </div>
+        </div>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroupPrepend">
@@ -47,7 +61,7 @@
   border-radius: 10px;
 }
 .newCompanyForm .form-control.nameCompany {
-   border: 1px solid #ced4da;
+  border: 1px solid #ced4da;
 }
 .cadastrar {
   width: 100%;
@@ -56,5 +70,14 @@
   border-radius: 5px;
   color: #eff1f8;
   border: none;
+}
+#inputGroupPrepend.searchBtn {
+  padding: 0;
+}
+#inputGroupPrepend.searchBtn button {
+  border: none;
+  margin: 0;
+  padding: 0 10px;
+  height: 100%;
 }
 </style>
