@@ -1,13 +1,29 @@
 <template>
   <div class="page">
     <header>
+      <div class="linearGradient"></div>
       <nav class="menu">
         <div class="logo">
-          <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link> 
+          <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
-        <div class="links">
-          <router-link to="/minhas-viagens"><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens</router-link>
-          <router-link to="/minha-conta"><img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" />Minha Conta</router-link>
+        <div class="links" v-if="isAdmin === true">
+          <router-link to="/nova-companhia"
+            ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Companhia</router-link
+          >
+          <router-link to="/voos"
+            ><img src="./assets/icon/iconVoo.svg" class="mr-1" /> Voos
+          </router-link>
+          <router-link to="/novo-usuario"
+            ><img src="./assets/icon/iconUser.svg" class="mr-1" /> Usuário
+          </router-link>
+        </div>
+        <div class="links" v-else>
+          <router-link to="/minhas-viagens"
+            ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens</router-link
+          >
+          <router-link to="/minha-conta"
+            ><img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" />Minha Conta</router-link
+          >
         </div>
       </nav>
     </header>
@@ -15,10 +31,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "page",
+  data() {
+    return {
+      isAdmin: true,
+    };
+  },
+};
+</script>
+
 <style>
 * {
   color: #333333;
   font-family: Nunito;
+  box-sizing: border-box;
 }
 body {
   background: rgb(243 243 243);
@@ -38,6 +66,9 @@ h4 {
 a {
   color: #333333;
 }
+.page {
+  height: 100%;
+}
 #app {
   color: #333333;
   font-family: Nunito, Helvetica, Arial, sans-serif;
@@ -45,6 +76,19 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   padding: 0 15px 0 15px;
+}
+.linearGradient {
+  background: linear-gradient(
+    106.46deg,
+    #accce9 23.73%,
+    #99cceb 32.64%,
+    #d1cbd9 44.26%,
+    #ddcbd5 55.37%,
+    #e4cbd3 55.81%,
+    #ffa251 77.19%
+  );
+  width: 100%;
+  height: 8px;
 }
 input {
   background-color: #eff1f8;
@@ -56,9 +100,14 @@ input {
   max-width: 1400px;
   margin: auto;
 }
-footer, 
+footer,
 header {
   background-color: #ffffff;
+}
+
+header {
+  position: sticky;
+  top: 0;
 }
 
 .menu {
@@ -259,21 +308,22 @@ form {
   border-radius: 10px;
 }
 
-.slick-slide  {
+.slick-slide {
   outline: none;
 }
 
-.slick-prev::before, .slick-next::before {
+.slick-prev::before,
+.slick-next::before {
   color: #000 !important;
   font-size: 25px;
 }
 
-.trips{
+.trips {
   display: flex;
   justify-content: center;
 }
 
-.account-card{
+.account-card {
   background-color: rgb(255, 253, 253);
   width: 900px;
   height: 300px;
@@ -282,7 +332,7 @@ form {
   border-radius: 10px;
 }
 
-.destination{
+.destination {
   width: 500px;
   display: flex;
   justify-content: space-between;
@@ -290,27 +340,27 @@ form {
   margin-bottom: 30px;
 }
 
-.airline-img{
+.airline-img {
   /* margin-left: 200px; */
   width: 40px;
   height: 40px;
 }
 
-.latam{
+.latam {
   font-weight: bold;
 }
 
-.dest{
+.dest {
   font-size: 20px;
   font-weight: bold;
 }
 
-.airline{
+.airline {
   display: flex;
   justify-content: flex-end;
 }
 
-.embarque{
+.embarque {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -318,39 +368,39 @@ form {
   margin-bottom: 30px;
 }
 
-.embarque-texto{
+.embarque-texto {
   font-size: 14px;
-  color:black;
+  color: black;
   font-weight: 300;
 }
 
-.tempo{
+.tempo {
   /* background-color: black; */
-  width:350px;
+  width: 350px;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
   align-items: center;
 }
 
-.response{
+.response {
   color: #000;
   margin-left: 10px;
 }
 
-.preco{
+.preco {
   color: rgb(46, 46, 190);
   margin-left: 30px;
 }
 
-.cancelamento{
+.cancelamento {
   display: flex;
   justify-content: flex-end;
 }
 
-.cancel{
+.cancel {
   cursor: pointer;
-  color: rgb(122, 16, 16)
+  color: rgb(122, 16, 16);
 }
 
 @media (max-width: 1600px) {
