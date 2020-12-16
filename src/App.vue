@@ -2,11 +2,11 @@
   <div class="page">
     <header>
       <div class="linearGradient"></div>
-      <nav class="menu">
+      <nav class="menu" v-if="isAdmin === true">
         <div class="logo">
-          <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
+          <router-link to="/admin"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
-        <div class="links" v-if="isAdmin === true">
+        <div class="links" >
           <router-link to="/nova-companhia"
             ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Companhia</router-link
           >
@@ -17,7 +17,12 @@
             ><img src="./assets/icon/iconUser.svg" class="mr-1" /> Usuário
           </router-link>
         </div>
-        <div class="links" v-else>
+      </nav>
+      <nav class="menu" v-else>
+        <div class="logo">
+          <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
+        </div>
+        <div class="links">
           <router-link to="/minhas-viagens"
             ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens</router-link
           >

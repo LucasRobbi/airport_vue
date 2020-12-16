@@ -9,6 +9,7 @@ import AdminNewCompany from '../views/admin/AdminNewCompany.vue'
 import AdminNewTrip from '../views/admin/AdminNewTrip.vue'
 import AdminNewUser from '../views/admin/AdminNewUser.vue'
 import AdminTrips from '../views/admin/AdminTrips.vue'
+import AdminHome from '../views/admin/AdminHome.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/admin',
+    name: 'AdminHome',
+    component: AdminHome
   },
   {
     path: '/minhas-viagens',

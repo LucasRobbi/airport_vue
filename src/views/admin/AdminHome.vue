@@ -4,12 +4,12 @@
             <p>Bem vindo, {{user_name}}</p>
             <div class="painel">
                 <div>
-                    <img src=".../assets/icon/painelAdmin.svg" alt="A aventura chama" id="imgPainel">
+                    <img src="../../assets/icon/painelAdmin.svg" alt="A aventura chama" id="imgPainel">
                 </div>
                 <div class="links">
-                    <router-link to="./AdminTrips.vue"><button class="acess">Lista de Voos</button></router-link>
-                    <router-link to="./AdminNewCompany.vue"><button class="acess">Cadastre uma Companhia</button></router-link>
-                    <router-link to="./AdminNewUser.vue"><button class="acess">Cadastre um Admin</button></router-link>
+                    <router-link to="/voo"><button class="acess">Lista de Voos</button></router-link>
+                    <router-link to="/nova-companhia"><button class="acess">Cadastre uma Companhia</button></router-link>
+                    <router-link to="/novo-usuario"><button class="acess">Cadastre um Admin</button></router-link>
                 </div>
             </div>
         </div>
@@ -17,8 +17,16 @@
 </template>
 
 <script>
-
+export default {
+  name: "admin-home",
+  data() {
+    return {
+      user_name: "Lucas Robbi",
+    };
+  },
+};
 </script>
+
 
 <style>
 .painel{
@@ -28,10 +36,6 @@
 #imgPainel{
     height: 200px;
     width: auto;
-}
-.links{
-    display: block;
-    justify-content: center;
 }
 .acess {
   width: 100%;
