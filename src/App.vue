@@ -1,30 +1,24 @@
-@font-face {
-  font-family: Nunito;
-  src: url(./fonts/Nunito-Black.ttf);
-  src: url(./fonts/Nunito-BlackItalic.ttf);
-  src: url(./fonts/Nunito-Bold.ttf);
-  src: url(./fonts/Nunito-BoldItalic.ttf);
-  src: url(./fonts/Nunito-ExtraBold.ttf);
-  src: url(./fonts/Nunito-ExtraBoldItalic.ttf);
-  src: url(./fonts/Nunito-ExtraLight.ttf);
-  src: url(./fonts/Nunito-ExtraLightItalic.ttf);
-  src: url(./fonts/Nunito-Italic.ttf);
-  src: url(./fonts/Nunito-Light.ttf);
-  src: url(./fonts/Nunito-LightItalic.ttf);
-  src: url(./fonts/Nunito-Regular.ttf);
-  src: url(./fonts/Nunito-SemiBold.ttf);
-  src: url(./fonts/Nunito-SemiBoldItalic.ttf);
-}
+<template>
+  <div class="page">
+    <header>
+      <nav class="menu">
+        <div class="logo">
+          <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link> 
+        </div>
+        <div class="links">
+          <router-link to="/minhas-viagens"><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens</router-link>
+          <router-link to="/minha-conta"><img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" />Minha Conta</router-link>
+        </div>
+      </nav>
+    </header>
+    <router-view />
+  </div>
+</template>
 
+<style>
 * {
   color: #333333;
   font-family: Nunito;
-}
-
-header {
-  margin-left: -15px;
-  margin-right: -15px;
-  background-color: #ffffff;
 }
 body {
   background: rgb(243 243 243);
@@ -43,7 +37,14 @@ h4 {
 }
 a {
   color: #333333;
+}
+#app {
+  color: #333333;
+  font-family: Nunito, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  padding: 0 15px 0 15px;
 }
 input {
   background-color: #eff1f8;
@@ -51,28 +52,45 @@ input {
   padding: 10px;
   border-radius: 5px;
 }
+.custom-container {
+  max-width: 1400px;
+  margin: auto;
+}
+footer, 
+header {
+  background-color: #ffffff;
+}
 
-#menu {
+.menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
 }
-
-#menu .links,
-#menu .links a {
+.logo {
+  width: 60px;
+}
+.links,
+.links a {
   display: flex;
   padding-right: 20px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-#menu .links a:hover {
+.links a:hover {
   color: #ff5929;
 }
 
-#menu .links a img {
+.links a img {
   padding-right: 10px;
+}
+
+@media (max-width: 1600px) {
+  .custom-container {
+    max-width: 1300px;
+    margin: auto;
+  }
 }
 
 .input-group {
@@ -140,7 +158,7 @@ input {
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  background-image: url("./img/icon/iconVoo.svg");
+  background-image: url("./assets/icon/iconVoo.svg");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -152,7 +170,7 @@ input {
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  background-image: url("./img/icon/iconPouso.svg");
+  background-image: url("./assets/icon/iconPouso.svg");
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 5px;
@@ -174,61 +192,7 @@ form {
   display: flex;
   justify-content: flex-end;
 }
-.botao_add_crianca,
-.botao_remove_crianca,
-.botao_add_adulto,
-.botao_remove_adulto {
-  margin-right: 3px;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffa251;
-  height: 30px;
-  min-width: 30px;
-  max-width: 30px;
-}
-#adultos {
-  display: flex;
-  justify-content: space-around;
-  margin: 0px;
-  padding-left: 30px;
-  background-image: url("./img/adultos.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-position-x: 5px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-}
 
-#criancas {
-  display: flex;
-  justify-content: space-around;
-  margin: 0px;
-  padding-left: 30px;
-  background-image: url("./img/criancas.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-position-x: 5px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-}
-#data_ida,
-#data_volta {
-  margin-bottom: 10px;
-  border: none;
-  width: 100%;
-}
-
-#buscar {
-  width: 100%;
-  height: 30px;
-  background-color: #ffa251;
-  border-radius: 5px;
-  color: #eff1f8;
-  border: none;
-}
 #vue-app {
   margin: 0;
   min-width: 100%;
@@ -240,7 +204,6 @@ form {
   padding-left: 0;
   border-radius: 8%;
 }
-
 .close:hover,
 .close:focus {
   color: black;
@@ -274,74 +237,6 @@ form {
   border: none;
 }
 
-/*MINHA CONTA*/
-
-#minha_conta_img {
-  padding-left: 80px;
-  max-height: 200px;
-}
-#painel_conta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px;
-}
-#painel_conta img {
-  margin-right: 30px;
-}
-.edit-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-right: 3px; */
-}
-.pencil-edit {
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-}
-.my-account {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 25px;
-  margin-right: 20px;
-}
-.logout-div {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-.delete {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-.pensil-div {
-  position: absolute;
-  right: 0;
-  top: 20px;
-}
-.logout {
-  color: rgb(78, 2, 2);
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-#dados {
-  margin-right: 60px;
-  padding: 30px;
-  padding-left: 50px;
-  display: block;
-  justify-content: space-around;
-  background-color: #e7ebeb;
-  border-radius: 15px;
-  width: 600px;
-  box-shadow: 2px 3px 3px rgb(82, 81, 81);
-  position: relative;
-}
-
 .div-imgs {
   display: flex;
   align-items: center;
@@ -362,14 +257,6 @@ form {
 .img-edit {
   max-width: 300px;
   border-radius: 10px;
-}
-
-.card {
-  margin: 5px;
-}
-
-.card-img-top {
-  max-height: 130px;
 }
 
 .slick-slide  {
@@ -472,3 +359,4 @@ form {
     margin: auto;
   }
 }
+</style>
