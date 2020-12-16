@@ -1,38 +1,60 @@
 <template>
-    <div class="admin-new-company">
-        <div>
-            <h1>Companhia Aérea</h1>
-            <p>Pesquise pelo nome da companhia</p>
-            <div>
-                <input type="text" placeholder="Nome companhia">
-                <button id="addImage"><img src=".../assets/icon/iconLoadImage.svg">Escolha uma imagem</button>
-            </div>
-            <div id=cadastrar>
-                <button class="cadastrar">Cadastrar</button>
-            </div>
+  <div class="admin-new-company">
+    <div class="styledContainer">
+      <h1>Companhia Aérea</h1>
+      <p>Pesquise pelo nome da companhia</p>
+      <div class="newCompanyForm">
+        <input type="text" class="form-control nameCompany" placeholder="Nome companhia" required />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">
+              <img src="../../assets/icon/iconLoadImage.svg" />
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Escolha uma imagem" required />
         </div>
+      </div>
+      <div id="cadastrar">
+        <button class="cadastrar">Cadastrar</button>
+      </div>
     </div>
+  </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style>
-#addImage{
-    background-color: #EFF1F8;
+#addImage {
+  background-color: #eff1f8;
 }
-#cadastrar{
-    display: flex;
-    align-content: right;
+#cadastrar {
+  display: flex;
+  align-content: right;
 }
-.cadastrar{
+.admin-new-company {
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  height: 100%;
+}
+.styledContainer {
+  margin-top: 100px;
+  background-color: rgb(255, 253, 253);
+  max-width: 900px;
+  height: auto;
+  padding: 30px;
+  box-shadow: 5px 5px 5px rgba(110, 110, 110, 0.5);
+  border-radius: 10px;
+}
+.newCompanyForm .form-control.nameCompany {
+   border: 1px solid #ced4da;
+}
+.cadastrar {
   width: 100%;
   height: 50px;
   background-color: #ffa251;
   border-radius: 5px;
   color: #eff1f8;
   border: none;
-  margin: 10px;
 }
 </style>
