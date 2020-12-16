@@ -46,7 +46,7 @@
           <p>Ida</p>
           <input type="date" id="data_ida" name="data_ida" />
           <br />
-          <a href="./resultados.html"><button id="buscar">Buscar</button></a>
+          <router-link  to="/resultados"><button id="buscar">Buscar</button></router-link>
         </div>
       </div>
 
