@@ -406,7 +406,7 @@ form {
   border: 1px solid #ced4da;
 }
 .styledContainer {
-  margin-top: 100px;
+  margin-top: 80px;
   background-color: rgb(255, 253, 253);
   max-width: 900px;
   height: auto;

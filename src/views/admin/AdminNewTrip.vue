@@ -3,8 +3,8 @@
     <div class="d-flex justify-content-center">
       <div class="styledContainer">
         <h1>Novo Voo</h1>
-        <div>
-          <div class="form-group">
+        <div  class="d-flex">
+          <div class="form-group mr-4">
             <select class="form-control withBorder" id="embarque">
               <option selected disabled>Embarque</option>
               <option>São Paulo</option>
