@@ -1,33 +1,70 @@
 <template>
-    <div class="admin-new-user">
-        <div>
-            <h1>Usuário</h1>
-            <p>Pesquise pelo nome ou CPF</p>
-            <div>
-                <div>
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="CPF">   
-                </div>
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Senha"> 
+  <div class="admin-new-user">
+    <div class="styledContainer">
+      <h1>Usuário</h1>
+      <div>
+        <div class="d-flex">
+          <div class="input-group mr-5">
+            <input type="text" class="form-control withBorder" placeholder="Nome" />
+            <div class="input-group-prepend">
+              <span class="input-group-text searchBtn" id="inputGroupPrepend">
+                <button>
+                  <img src="../../assets/icon/search.svg" />
+                </button>
+              </span>
             </div>
-            <div id=cadastrar>
-                <button class="cadastrar">Cadastrar</button>
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text searchBtn" id="inputGroupPrepend">
+                <button>
+                  <img src="../../assets/icon/fingerprint.svg" />
+                </button>
+              </span>
             </div>
+            <input type="text" class="form-control withBorder" placeholder="CPF" />
+          </div>
         </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text searchBtn" id="inputGroupPrepend">
+              <button>
+                <img src="../../assets/icon/email.svg" />
+              </button>
+            </span>
+          </div>
+          <input type="text" class="form-control withBorder" placeholder="E-mail" />
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text searchBtn" id="inputGroupPrepend">
+              <button>
+                <img src="../../assets/icon/lock.svg" />
+              </button>
+            </span>
+          </div>
+          <input type="text" class="form-control withBorder" placeholder="Senha" />
+        </div>
+      </div>
+      <div id="cadastrar">
+        <button class="cadastrar">Cadastrar</button>
+      </div>
     </div>
+  </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style>
-#cadastrar{
-    display: flex;
-    align-content: right;
+.admin-new-user {
+  display: flex;
+  justify-content: center;
 }
-.cadastrar{
+#cadastrar {
+  display: flex;
+  align-content: right;
+}
+.cadastrar {
   width: 100%;
   height: 50px;
   background-color: #ffa251;
