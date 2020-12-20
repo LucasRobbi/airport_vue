@@ -1,6 +1,11 @@
 <template>
   <div class="conta">
-    <SignIn/>
+    <div v-if="openSignIn === true">
+      <SignIn v-bind:goToLogin="goToLogin" v-bind:hideModal="hideModal"/>
+    </div>
+    <div v-if="openLogIn === true">
+      <LogIn v-bind:goToSignIn="goToSignIn" v-bind:hideModal="hideModal"/>
+    </div>
     <div id="painel_conta">
       <img id="minha_conta_img" src="../assets/icon/painelUser.svg" />
       <div id="dados">
@@ -27,12 +32,36 @@
 <script>
 // @ is an alias to /src
 import SignIn from '@/components/SignIn.vue'
+import LogIn from '@/components/LogIn.vue'
 
 export default {
   name: "conta",
   components: {
-    SignIn
+    SignIn,
+    LogIn
   },
+  data() {
+    return {
+      openSignIn: true,
+      openLogIn: false,
+    }
+  },
+  methods: {
+    goToLogin(){
+      this.openSignIn = false;
+      this.openLogIn = true;
+    },
+    goToSignIn(){
+      this.openSignIn = true;
+      this.openLogIn = false;
+    },
+    hideModal(){
+      this.openSignIn = false;
+      this.openLogIn = false;
+      this.$refs["logInModal"].hide();
+      this.$refs["signInModal"].hide();
+    }
+  }
 };
 </script>
 
