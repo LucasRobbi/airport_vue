@@ -112,7 +112,7 @@ export default {
       email: "",
       cpf: "",
       password: "",
-      openLogIn: false,
+      openLogIn: false
     };
   },
   methods: {
@@ -120,7 +120,7 @@ export default {
       const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
       axios.post(`http://localhost:5000/user`, user_data)
       .then(response => console.log('res', response))
-      .catch(e => this.errors.push(e));
+      .catch(e => console.error(e));
     },   
     showModal() {
       this.$refs["signInModal"].show();

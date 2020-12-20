@@ -84,7 +84,7 @@ export default {
           this.token = res.data.token;
           sessionStorage.setItem('user_token', this.token)
         })
-        .catch(e => this.errors.push(e))
+        .catch(e => console.error(e))
     },
     showModal() {
       this.$refs["logInModal"].show();

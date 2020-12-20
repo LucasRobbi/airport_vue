@@ -78,7 +78,7 @@ export default {
         sessionStorage.removeItem('user_token');
         window.location.pathname = '/';
       })
-      .catch(e =>  this.errors.push(e));
+      .catch(e =>  console.error(e));
     }
   },
   mounted() {
@@ -89,7 +89,7 @@ export default {
       this.email = res.data.email,
       this.cpf = res.data.cpf
     })
-    .catch(e =>  this.errors.push(e))
+    .catch(e =>  console.error(e))
   },
 };
 </script>
