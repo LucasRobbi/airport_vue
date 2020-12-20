@@ -8,6 +8,7 @@
       title="Cadastre-se"
       @close="signInClose"
       @cancel="signInClose"
+      @ok="createUser"
     >
       <div class="modal-body">
         <div class="input-group">
@@ -22,8 +23,8 @@
             id="validationNome"
             placeholder="Insira seu Nome"
             aria-describedby="inputGroupPrepend"
-            required
             v-model="nome"
+            required
           />
           <div class="invalid-feedback">
             Selecione seu nome.
@@ -41,6 +42,7 @@
             id="validationCustomEmail"
             placeholder="Insira um Email"
             aria-describedby="inputGroupPrepend"
+            v-model="email"
             required
           />
           <div class="invalid-feedback">
@@ -59,6 +61,7 @@
             id="validationCustoCPF"
             placeholder="Insira seu CPF"
             aria-describedby="inputGroupPrepend"
+            v-model="cpf"
             required
           />
           <div class="invalid-feedback">
@@ -77,6 +80,7 @@
             id="validationCustomSenha"
             placeholder="Insira uma Senha"
             aria-describedby="inputGroupPrepend"
+            v-model="password"
             required
           />
           <div class="invalid-feedback">
@@ -85,23 +89,22 @@
         </div>
       </div>
       <div>
-        <button class="border-0 change-modal m-auto w-100 p-2" v-on:click="goToLogIn">
+        <button class="border-0 change-modal m-auto w-100 p-2" v-on:click="handleGoToLogIn">
           Já tenho cadastro. Entre
         </button>
       </div>
     </b-modal>
-    <div v-if="openLogIn === true">
-      <LogIn />
-    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import LogIn from "@/components/LogIn.vue";
 
 export default {
   name: "signInModal",
+  props: {
+    goToLogin: Function
+  },
   data() {
     return {
       nome: "",
@@ -111,31 +114,15 @@ export default {
       openLogIn: false,
     };
   },
-  components: {
-    LogIn,
-  },
-  created() {
-    const user_data = {
-      name: this.name,
-      email: this.email,
-      cpf: this.cpf,
-      password: this.password,
-    };
-    axios
-      .post(`http://localhost:5000/user`, user_data)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((e) => {
-        this.errors.push(e);
-      });
-  },
   methods: {
+    createUser() {
+      const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
+      axios.post(`http://localhost:5000/user`, user_data)
+      .then(response => console.log('res', response))
+      .catch(e => this.errors.push(e));
+    },
     showModal() {
       this.$refs["signInModal"].show();
-    },
-    hideModal() {
-      this.$refs["signInModal"].hide();
     },
     signInClose() {
       window.location.pathname = "/";
@@ -143,10 +130,10 @@ export default {
     toggleModal() {
       this.$refs["signInModal"].toggle("#toggle-btn");
     },
-    goToLogIn() {
-      this.$refs["signInModal"].hide();
-      this.openLogIn === true
-      console.log(this.openLogIn)
+    handleGoToLogIn() {
+      // this.$refs["signInModal"].hide();
+      // this.openLogIn = true
+      this.goToLogin()
     },
   },
   mounted() {
