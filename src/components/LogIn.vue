@@ -18,7 +18,7 @@
             </span>
           </div>
           <input
-            type="text"
+            type="email"
             class="form-control"
             id="validationCustomEmail"
             placeholder="Insira seu Email"
@@ -37,7 +37,7 @@
             </span>
           </div>
           <input
-            type="text"
+            type="password"
             class="form-control"
             id="validationSenha"
             placeholder="Insira sua senha"
@@ -82,7 +82,7 @@ export default {
         axios.post('http://localhost:5000/signIn', login_data)
         .then(res => {
           this.token = res.data.token;
-          localStorage.setItem('user_token', this.token)
+          sessionStorage.setItem('user_token', this.token)
         })
         .catch(e => this.errors.push(e))
     },

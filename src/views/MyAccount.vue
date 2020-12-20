@@ -15,14 +15,14 @@
             <img class="pencil-edit" src="../assets/pencil.png" />
           </div>
         </div>
-        <p>Nome:</p>
-        <p>Email:</p>
-        <p>CPF:</p>
+        <p>Nome: {{name}}</p>
+        <p>Email: {{email}}</p>
+        <p>CPF: {{cpf}}</p>
         <p>Senha:</p>
 
         <div class="logout-div">
-          <img src="../assets/delete.png" class="delete" />
-          <span class="logout">Sair</span>
+          <img @click="deleteUser" src="../assets/delete.png" class="delete" />
+          <span @click="logout" class="logout">Sair</span>
         </div>
       </div>
     </div>
@@ -33,6 +33,7 @@
 // @ is an alias to /src
 import SignIn from '@/components/SignIn.vue'
 import LogIn from '@/components/LogIn.vue'
+import axios from 'axios';
 
 export default {
   name: "conta",
@@ -42,6 +43,10 @@ export default {
   },
   data() {
     return {
+      name: "",
+      email: "",
+      cpf: "",
+      errors: [],
       openSignIn: true,
       openLogIn: false,
     }
@@ -60,8 +65,32 @@ export default {
       this.openLogIn = false;
       this.$refs["logInModal"].hide();
       this.$refs["signInModal"].hide();
+    },
+    logout() {
+      sessionStorage.removeItem('user_token');
+      window.location.pathname = '/';
+    },
+    deleteUser(){
+      const token = sessionStorage.getItem('user_token');
+      axios.delete('http://localhost:5000/user', { headers: { Authorization: `bearer ${token}` } })
+      .then(res => {
+        console.log(res.data);
+        sessionStorage.removeItem('user_token');
+        window.location.pathname = '/';
+      })
+      .catch(e =>  this.errors.push(e));
     }
-  }
+  },
+  mounted() {
+    const token = sessionStorage.getItem('user_token');
+    axios.get('http://localhost:5000/user', { headers: { Authorization: `bearer ${token}` } })
+    .then(res => {
+      this.name = res.data.name
+      this.email = res.data.email,
+      this.cpf = res.data.cpf
+    })
+    .catch(e =>  this.errors.push(e))
+  },
 };
 </script>
 

@@ -37,7 +37,7 @@
             </span>
           </div>
           <input
-            type="text"
+            type="email"
             class="form-control"
             id="validationCustomEmail"
             placeholder="Insira um Email"
@@ -75,7 +75,7 @@
             </span>
           </div>
           <input
-            type="text"
+            type="password"
             class="form-control"
             id="validationCustomSenha"
             placeholder="Insira uma Senha"
