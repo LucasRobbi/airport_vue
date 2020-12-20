@@ -8,6 +8,7 @@
       title="Entre"
       @close="signInClose"
       @cancel="signInClose"
+      @ok="createUser"
     >
       <div class="modal-body">
         <div class="input-group">
@@ -22,10 +23,8 @@
             id="validationCustomEmail"
             placeholder="Insira seu Email"
             aria-describedby="inputGroupPrepend"
-            v-model="user.email"
             required
           />
-          {{console.log(email)}}
           <div class="invalid-feedback">
             Selecione um Email.
           </div>
@@ -63,6 +62,7 @@
       title="Cadastre-se"
       @close="signInClose"
       @cancel="signInClose"
+      @ok="createUser"
     >
       <div class="modal-body">
         <div class="input-group">
@@ -77,6 +77,7 @@
             id="validationNome"
             placeholder="Insira seu Nome"
             aria-describedby="inputGroupPrepend"
+            v-model="name"
             required
           />
           <div class="invalid-feedback">
@@ -95,6 +96,7 @@
             id="validationCustomEmail"
             placeholder="Insira um Email"
             aria-describedby="inputGroupPrepend"
+            v-model="email"
             required
           />
           <div class="invalid-feedback">
@@ -113,6 +115,7 @@
             id="validationCustoCPF"
             placeholder="Insira seu CPF"
             aria-describedby="inputGroupPrepend"
+            v-model="cpf"
             required
           />
           <div class="invalid-feedback">
@@ -131,6 +134,7 @@
             id="validationCustomSenha"
             placeholder="Insira uma Senha"
             aria-describedby="inputGroupPrepend"
+            v-model="password"
             required
           />
           <div class="invalid-feedback">
@@ -162,21 +166,17 @@ export default {
   },
   components: {},
     created() {
-    const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
-    axios.post(`http://localhost:5000/user`, user_data)
-    .then(response => {
-      console.log(response)
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
+    
   },
   methods: {
+    createUser() {
+      const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
+      axios.post(`http://localhost:5000/user`, user_data)
+      .then(response => console.log('res', response))
+      .catch(e => this.errors.push(e));
+    },
     showModal() {
       this.$refs["signInModal"].show();
-    },
-    hideModal() {
-      this.$refs["signInModal"].hide();
     },
     signInClose() {
       window.location.pathname = "/";
