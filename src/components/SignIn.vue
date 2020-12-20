@@ -113,7 +113,6 @@ export default {
       cpf: "",
       password: "",
       openLogIn: false,
-      token: null
     };
   },
   methods: {
@@ -122,16 +121,7 @@ export default {
       axios.post(`http://localhost:5000/user`, user_data)
       .then(response => console.log('res', response))
       .catch(e => this.errors.push(e));
-    },
-    signIn(){
-      const login_data = { email: this.email, password: this.password }
-      axios.post('http://localhost:5000/signIn', login_data)
-      .then(res => {
-        this.token = res.data.token;
-        localStorage.setItem('user_token', this.token)
-      })
-      .catch(e => this.errors.push(e))
-    },
+    },   
     showModal() {
       this.$refs["signInModal"].show();
     },

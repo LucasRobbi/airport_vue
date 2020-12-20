@@ -8,6 +8,7 @@
       title="Entre"
       @close="signInClose"
       @cancel="signInClose"
+      @ok="signIn"
     >
       <div class="modal-body">
         <div class="input-group">
@@ -41,6 +42,7 @@
             id="validationSenha"
             placeholder="Insira sua senha"
             aria-describedby="inputGroupPrepend"
+            v-model="password"
             required
           />
           <div class="invalid-feedback">
@@ -58,6 +60,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "logInModal",
   data() {
@@ -65,6 +69,7 @@ export default {
       email: "",
       password: "",
       openSignIn: false,
+      token: null
     };
   },
   props: {
@@ -72,6 +77,15 @@ export default {
     hideModal: Function,
   },
   methods: {
+      signIn(){
+        const login_data = { email: this.email, password: this.password }
+        axios.post('http://localhost:5000/signIn', login_data)
+        .then(res => {
+          this.token = res.data.token;
+          localStorage.setItem('user_token', this.token)
+        })
+        .catch(e => this.errors.push(e))
+    },
     showModal() {
       this.$refs["logInModal"].show();
     },
