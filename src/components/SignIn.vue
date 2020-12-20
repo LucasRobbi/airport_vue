@@ -4,62 +4,6 @@
       no-close-on-backdrop
       centered
       no-close-on-esc
-      ref="logInModal"
-      title="Entre"
-      @close="signInClose"
-      @cancel="signInClose"
-      @ok="signIn"
-    >
-      <div class="modal-body">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend">
-              <img src="../assets/icon/email.svg" />
-            </span>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            id="validationCustomEmail"
-            placeholder="Insira seu Email"
-            aria-describedby="inputGroupPrepend"
-            v-model="email"
-            required
-          />
-          <div class="invalid-feedback">
-            Selecione um Email.
-          </div>
-        </div>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend">
-              <img src="../assets/icon/lock.svg" />
-            </span>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            id="validationSenha"
-            placeholder="Insira sua senha"
-            aria-describedby="inputGroupPrepend"
-            v-model="password"
-            required
-          />
-          <div class="invalid-feedback">
-            Selecione sua senha.
-          </div>
-        </div>
-      </div>
-      <div>
-        <button class="border-0 change-modal m-auto w-100 p-2" v-on:click="goToSignIn">
-          Não tenho cadastro. Cadastre-se
-        </button>
-      </div>
-    </b-modal>
-    <b-modal
-      no-close-on-backdrop
-      centered
-      no-close-on-esc
       ref="signInModal"
       title="Cadastre-se"
       @close="signInClose"
@@ -145,7 +89,7 @@
         </div>
       </div>
       <div>
-        <button class="border-0 change-modal m-auto w-100 p-2" v-on:click="goToLogIn">
+        <button class="border-0 change-modal m-auto w-100 p-2" v-on:click="handleGoToLogIn">
           Já tenho cadastro. Entre
         </button>
       </div>
@@ -154,23 +98,23 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "signInModal",
+  props: {
+    goToLogin: Function,
+    hideModal: Function
+  },
   data() {
     return {
-        name: "",
-        email: "",
-        cpf: "",
-        password: "", 
-        errors: [],
-        token: null     
+      name: "",
+      email: "",
+      cpf: "",
+      password: "",
+      openLogIn: false,
+      token: null
     };
-  },
-  components: {},
-    created() {
-    
   },
   methods: {
     createUser() {
@@ -192,20 +136,11 @@ export default {
       this.$refs["signInModal"].show();
     },
     signInClose() {
-      window.location.pathname = "/";
+      if(window.location.pathname !== "/") window.location.pathname = "/"
+      else this.hideModal();
     },
-    toggleModal() {
-      // We pass the ID of the button that we want to return focus to
-      // when the modal has hidden
-      this.$refs["signInModal"].toggle("#toggle-btn");
-    },
-    goToSignIn() {
-      this.$refs["logInModal"].hide();
-      this.$refs["signInModal"].show();
-    },
-    goToLogIn() {
-      this.$refs["signInModal"].hide();
-      this.$refs["logInModal"].show();
+    handleGoToLogIn() {
+      this.goToLogin()
     },
   },
   mounted() {

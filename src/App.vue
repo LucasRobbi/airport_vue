@@ -35,7 +35,10 @@
         </div>
       </nav>
       <div v-if="openSignIn === true">
-        <SignIn />
+        <SignIn v-bind:goToLogin="goToLogin" v-bind:hideModal="hideModal"/>
+      </div>
+      <div v-if="openLogIn === true">
+        <LogIn v-bind:goToSignIn="goToSignIn" v-bind:hideModal="hideModal"/>
       </div>
     </header>
     <router-view />
@@ -45,6 +48,7 @@
 <script>
 // import axios from 'axios';
 import SignIn from "@/components/SignIn.vue";
+import LogIn from "@/components/LogIn.vue";
 
 export default {
   name: "page",
@@ -52,25 +56,30 @@ export default {
     return {
       isAdmin: false,
       openSignIn: false,
+      openLogIn: false
     };
   },
   components: {
     SignIn,
+    LogIn,
   },
   methods: {
     handleOpenSignIn() {
       this.openSignIn = true;
     },
+    goToLogin(){
+      this.openSignIn = false;
+      this.openLogIn = true;
+    },
+    goToSignIn(){
+      this.openSignIn = true;
+      this.openLogIn = false;
+    },
+    hideModal(){
+      this.openSignIn = false;
+      this.openLogIn = false;
+    }
   },
-  // created() {
-  //   axios.get(`http://jsonplaceholder.typicode.com/posts`)
-  //   .then(response => {
-  //     this.posts = response.data
-  //   })
-  //   .catch(e => {
-  //     this.errors.push(e)
-  //   })
-  // }
 };
 </script>
 
