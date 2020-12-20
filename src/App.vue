@@ -23,7 +23,9 @@
           <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
         <div class="links">
-          <button v-on:click="handleOpenSignIn">Logar</button>
+          <button class="logIn" v-on:click="handleOpenSignIn">
+             <img src="./assets/icon/fingerprint.svg" class="mr-1" /> Logar
+          </button>
           <router-link to="/minhas-viagens">
             <img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens
           </router-link>
@@ -106,6 +108,11 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   padding: 0 15px 0 15px;
+}
+.logIn {
+  background: none;
+  border: none;
+  margin-right: 25px;
 }
 .linearGradient {
   background: linear-gradient(
