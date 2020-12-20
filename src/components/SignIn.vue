@@ -8,7 +8,7 @@
       title="Entre"
       @close="signInClose"
       @cancel="signInClose"
-      @ok="createUser"
+      @ok="signIn"
     >
       <div class="modal-body">
         <div class="input-group">
@@ -23,6 +23,7 @@
             id="validationCustomEmail"
             placeholder="Insira seu Email"
             aria-describedby="inputGroupPrepend"
+            v-model="email"
             required
           />
           <div class="invalid-feedback">
@@ -41,6 +42,7 @@
             id="validationSenha"
             placeholder="Insira sua senha"
             aria-describedby="inputGroupPrepend"
+            v-model="password"
             required
           />
           <div class="invalid-feedback">
@@ -161,7 +163,9 @@ export default {
         name: "",
         email: "",
         cpf: "",
-        password: "",      
+        password: "", 
+        errors: [],
+        token: null     
     };
   },
   components: {},
@@ -174,6 +178,15 @@ export default {
       axios.post(`http://localhost:5000/user`, user_data)
       .then(response => console.log('res', response))
       .catch(e => this.errors.push(e));
+    },
+    signIn(){
+      const login_data = { email: this.email, password: this.password }
+      axios.post('http://localhost:5000/signIn', login_data)
+      .then(res => {
+        this.token = res.data.token;
+        localStorage.setItem('user_token', this.token)
+      })
+      .catch(e => this.errors.push(e))
     },
     showModal() {
       this.$refs["signInModal"].show();
