@@ -14,8 +14,10 @@
             id="validationCustomEmail"
             placeholder="Insira seu Email"
             aria-describedby="inputGroupPrepend"
+            v-model="user.email"
             required
           />
+          {{console.log(email)}}
           <div class="invalid-feedback">
             Selecione um Email.
           </div>
@@ -118,9 +120,29 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "signInModal",
+  data() {
+    return {
+        name: "",
+        email: "",
+        cpf: "",
+        password: "",      
+    };
+  },
   components: {},
+    created() {
+    const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
+    axios.post(`http://localhost:5000/user`, user_data)
+    .then(response => {
+      console.log(response)
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  },
   methods: {
     showModal() {
       this.$refs["signInModal"].show();
