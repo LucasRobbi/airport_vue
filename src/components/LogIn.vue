@@ -13,7 +13,6 @@
           <button
             type="button"
             class="close mr-3 mt-2"
-            onclick="my_account._signInModal._onCancel()"
           >
             <span aria-hidden="true">&times;</span>
           </button>
