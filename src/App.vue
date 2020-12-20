@@ -6,7 +6,7 @@
         <div class="logo">
           <router-link to="/admin"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
-        <div class="links" >
+        <div class="links">
           <router-link to="/nova-companhia"
             ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Companhia</router-link
           >
@@ -23,12 +23,13 @@
           <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
         <div class="links">
-          <router-link to="/minhas-viagens"
-            ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens</router-link
-          >
-          <router-link to="/minha-conta"
-            ><img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" />Minha Conta</router-link
-          >
+          <router-link to="/minhas-viagens">
+            <img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens
+          </router-link>
+          <router-link to="/minha-conta">
+            <img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" /> Minha Conta
+          </router-link>
+          <SignIn/>
         </div>
       </nav>
     </header>
@@ -37,13 +38,29 @@
 </template>
 
 <script>
+// import axios from 'axios';
+import SignIn from '@/components/SignIn.vue'
+
+
 export default {
   name: "page",
   data() {
     return {
-      isAdmin: true,
+      isAdmin: false,
     };
   },
+  components: {
+    SignIn
+  }
+  // created() {
+  //   axios.get(`http://jsonplaceholder.typicode.com/posts`)
+  //   .then(response => {
+  //     this.posts = response.data
+  //   })
+  //   .catch(e => {
+  //     this.errors.push(e)
+  //   })
+  // }
 };
 </script>
 
@@ -131,6 +148,7 @@ header {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  white-space: nowrap;
 }
 .links a:hover {
   color: #ff5929;
