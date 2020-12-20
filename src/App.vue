@@ -23,15 +23,18 @@
           <router-link to="/"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
         <div class="links">
+          <button v-on:click="handleOpenSignIn">Logar</button>
           <router-link to="/minhas-viagens">
             <img src="./assets/icon/iconViagens.svg" class="mr-1" /> Minhas Viagens
           </router-link>
           <router-link to="/minha-conta">
             <img src="./assets/icon/iconUser.svg" class="ml-3 mr-1" /> Minha Conta
           </router-link>
-          <SignIn/>
         </div>
       </nav>
+      <div v-if="openSignIn === true">
+        <SignIn />
+      </div>
     </header>
     <router-view />
   </div>
@@ -39,19 +42,24 @@
 
 <script>
 // import axios from 'axios';
-import SignIn from '@/components/SignIn.vue'
-
+import SignIn from "@/components/SignIn.vue";
 
 export default {
   name: "page",
   data() {
     return {
       isAdmin: false,
+      openSignIn: false,
     };
   },
   components: {
-    SignIn
-  }
+    SignIn,
+  },
+  methods: {
+    handleOpenSignIn() {
+      this.openSignIn = true;
+    },
+  },
   // created() {
   //   axios.get(`http://jsonplaceholder.typicode.com/posts`)
   //   .then(response => {
