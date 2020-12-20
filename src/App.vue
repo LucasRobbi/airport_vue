@@ -35,10 +35,10 @@
         </div>
       </nav>
       <div v-if="openSignIn === true">
-        <SignIn v-bind:goToLogin="goToLogin"/>
+        <SignIn v-bind:goToLogin="goToLogin" v-bind:hideModal="hideModal"/>
       </div>
       <div v-if="openLogIn === true">
-        <LogIn v-bind:goToSignIn="goToSignIn"/>
+        <LogIn v-bind:goToSignIn="goToSignIn" v-bind:hideModal="hideModal"/>
       </div>
     </header>
     <router-view />
@@ -74,17 +74,12 @@ export default {
     goToSignIn(){
       this.openSignIn = true;
       this.openLogIn = false;
+    },
+    hideModal(){
+      this.openSignIn = false;
+      this.openLogIn = false;
     }
   },
-  // created() {
-  //   axios.get(`http://jsonplaceholder.typicode.com/posts`)
-  //   .then(response => {
-  //     this.posts = response.data
-  //   })
-  //   .catch(e => {
-  //     this.errors.push(e)
-  //   })
-  // }
 };
 </script>
 

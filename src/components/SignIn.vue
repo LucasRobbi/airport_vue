@@ -103,7 +103,8 @@ import axios from "axios";
 export default {
   name: "signInModal",
   props: {
-    goToLogin: Function
+    goToLogin: Function,
+    hideModal: Function
   },
   data() {
     return {
@@ -125,14 +126,10 @@ export default {
       this.$refs["signInModal"].show();
     },
     signInClose() {
-      window.location.pathname = "/";
-    },
-    toggleModal() {
-      this.$refs["signInModal"].toggle("#toggle-btn");
+      if(window.location.pathname !== "/") window.location.pathname = "/"
+      else this.hideModal();
     },
     handleGoToLogIn() {
-      // this.$refs["signInModal"].hide();
-      // this.openLogIn = true
       this.goToLogin()
     },
   },

@@ -69,19 +69,15 @@ export default {
   },
   props: {
     goToSignIn: Function,
+    hideModal: Function,
   },
   methods: {
     showModal() {
       this.$refs["logInModal"].show();
     },
-    hideModal() {
-      this.$refs["logInModal"].hide();
-    },
     signInClose() {
-      window.location.pathname = "/";
-    },
-    toggleModal() {
-      this.$refs["logInModal"].toggle("#toggle-btn");
+      if(window.location.pathname !== "/") window.location.pathname = "/"
+      else this.hideModal();
     },
     handleGoToSignIn() {
       this.goToSignIn();
