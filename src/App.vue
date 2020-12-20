@@ -78,6 +78,8 @@ export default {
     hideModal(){
       this.openSignIn = false;
       this.openLogIn = false;
+      this.$refs["logInModal"].hide();
+      this.$refs["signInModal"].hide();
     }
   },
 };
