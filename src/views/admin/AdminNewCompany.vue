@@ -9,6 +9,7 @@
             type="text"
             class="form-control withBorder"
             placeholder="Nome companhia"
+            v-model="name"
             required
           />
           <div class="input-group-prepend">
@@ -25,17 +26,47 @@
               <img src="../../assets/icon/iconLoadImage.svg" />
             </span>
           </div>
-          <input type="text" class="form-control" placeholder="Escolha uma imagem" required />
+          <input type="text" class="form-control" placeholder="Escolha uma imagem" required v-model="image"/>
         </div>
       </div>
       <div id="cadastrar">
-        <button class="cadastrar">Cadastrar</button>
+        <button @click="createAirline" class="cadastrar">Cadastrar</button>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+// @ is an alias to /src
+import axios from 'axios';
+
+export default {
+  components: {},
+  data() {
+    return {
+      name: "",
+      image: ""
+    };
+  },
+  methods: {
+    createAirline() {
+      const token = sessionStorage.getItem('user_token');
+      const airline_data = { name: this.name, logo: this.image };
+      axios.post('http://localhost:5000/airline',  airline_data, {
+        headers: { Authorization: `bearer ${token}` }
+      })
+      .then(res => {
+        if(res.status == 200) window.location.pathname == '/';
+      })
+      .catch(e => {
+        if(e.response.status == 401) return this.$swal('Algo deu errado', 'Você não tem permissão para fazer isso', 'warning')
+        if(![200].includes(e.response.status)) return this.$swal('Algo deu errado', 'Tente novamente mais tarde :(', 'error')
+        return this.$swal('Algo deu errado', 'Tente novamente mais tarde :(', 'error')
+      })
+    },
+  },
+};
+</script>
 
 <style>
 #addImage {

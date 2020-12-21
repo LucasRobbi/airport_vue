@@ -54,7 +54,7 @@ export default {
   name: "page",
   data() {
     return {
-      isAdmin: false,
+      isAdmin: true,
       openSignIn: false,
       openLogIn: false
     };
