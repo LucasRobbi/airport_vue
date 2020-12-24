@@ -69,7 +69,8 @@ export default {
       email: "",
       password: "",
       openSignIn: false,
-      token: null
+      token: null,
+      type: ""
     };
   },
   props: {
@@ -82,7 +83,9 @@ export default {
         axios.post('http://localhost:5000/signIn', login_data)
         .then(res => {
           this.token = res.data.token;
+          this.type = res.data.type;
           sessionStorage.setItem('user_token', this.token)
+          sessionStorage.setItem('user_type', this.type)
         })
         .catch(e => console.error(e))
     },

@@ -54,7 +54,7 @@ export default {
   name: "page",
   data() {
     return {
-      isAdmin: true,
+      isAdmin: false,
       openSignIn: false,
       openLogIn: false
     };
@@ -408,8 +408,8 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 390px;
-  margin-bottom: 30px;
+  max-width: 490px;
+  margin-bottom: 50px;
 }
 
 .embarque-texto {
