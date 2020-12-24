@@ -4,19 +4,23 @@
       <div class="styledContainer">
         <h1>Novo Voo</h1>
         <div  class="d-flex">
-          <div class="form-group mr-4">
-            <select class="form-control withBorder" id="embarque">
-              <option selected disabled>Embarque</option>
-              <option>São Paulo</option>
-              <option>Rio de Janeiro</option>
-            </select>
+          <div class="form-group mr-3">
+            <input
+              type="text"
+              class="form-control withBorder"
+              placeholder="Embarque"
+              v-model="shipment"
+              required
+            />
           </div>
           <div class="form-group">
-            <select class="form-control withBorder" id="Destino">
-              <option selected disabled>Destino</option>
-              <option>São Paulo</option>
-              <option>Rio de Janeiro</option>
-            </select>
+            <input
+              type="text"
+              class="form-control withBorder"
+              placeholder="Destino"
+              v-model="destination"
+              required
+            />
           </div>
         </div>
         <div>
@@ -72,14 +76,14 @@ export default {
   components: {},
   data() {
     return {
-      destination: "Nova Iorc",
-      shipment: "Rio de Janeiro",
+      destination: "",
+      shipment: "",
       ship_date: "",
       ship_time: "",
       estimated_time: 0,
       limit: 0,
       airline_id: 0,
-      status: "",
+      status: "ativo",
       ticket_price: 150.00,
       image: "",
       company_name: ""
@@ -87,17 +91,23 @@ export default {
   },
 
   methods: {
-    createFlight() {
-      const token = sessionStorage.getItem('user_token');
-      axios.get(`http://localhost:5000/airline/name/?name=${ this.company_name }`).then(res => this.airline_id = res.data.id).catch(e => console.error(e))
-      const flight_body = { destination: this.destination, shipment: this.shipment, ship_date: this.ship_date, ship_time: this.ship_time, estimated_time: Number(this.estimated_time), limit: this.limit, airline_id: this.airline_id, status: this.status, ticket_price: this.ticket_price, image: this.image }
-      axios.post('http://localhost:5000/flight', flight_body, { headers: { Authorization: `bearer ${token}` } })
-      .then(res => console.log(res))
-      .catch(e => {
+    async createFlight() {
+      try{
+         const token = sessionStorage.getItem('user_token');
+         const { data } = await axios.get(`http://localhost:5000/airline/name/?name=${ this.company_name }`);
+         const flight_body = { destination: this.destination, shipment: this.shipment, ship_date: this.ship_date, ship_time: this.ship_time, estimated_time: Number(this.estimated_time), limit: this.limit, airline_id: data.id, status: this.status, ticket_price: this.ticket_price, image: this.image }
+         const res = await axios.post('http://localhost:5000/flight', flight_body, { headers: { Authorization: `bearer ${token}` } })
+
+          if(res.status == 200) {
+            this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
+            return setTimeout(() => window.location.pathname = '/', 1000)
+          }
+
+      } catch(e){
         if(e.response.status == 401) return this.$swal('Algo deu errado', 'Você não tem permissão para fazer isso', 'warning')
         if(![200].includes(e.response.status)) return this.$swal('Algo deu errado', 'Tente novamente mais tarde :(', 'error')
         return this.$swal('Algo deu errado', 'Tente novamente mais tarde :(', 'error')
-      })
+      }
     }
   },
 }
