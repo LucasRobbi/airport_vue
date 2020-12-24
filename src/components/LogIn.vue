@@ -101,7 +101,10 @@ export default {
     },
   },
   mounted() {
-    this.showModal();
+    const token = sessionStorage.getItem('user_token');
+    if(!token){      
+      this.showModal();
+    }
   },
 };
 </script>

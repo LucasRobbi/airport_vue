@@ -117,6 +117,9 @@ export default {
   },
   methods: {
     createUser() {
+      if(!this.name || !this.email || !this.cpf || !this.password) {
+        return this.$swal('Erro ao preencher os campos', 'Verifique se todos os campos então preenchidos', 'error');
+      }
       const user_data = { name: this.name, email: this.email, cpf: this.cpf, password: this.password }
       axios.post(`http://localhost:5000/user`, user_data)
       .then(response => console.log('res', response))
@@ -134,7 +137,10 @@ export default {
     },
   },
   mounted() {
-    this.showModal();
+    const token = sessionStorage.getItem('user_token');
+    if(!token){      
+      this.showModal();
+    }
   },
 };
 </script>

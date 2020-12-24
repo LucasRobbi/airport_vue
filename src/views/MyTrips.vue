@@ -33,7 +33,7 @@ export default {
   methods: {
     goToLogin() {
       this.openSignIn = false;
-      this.openLogIn = true;
+      this.openLogIn = true;      
     },
     goToSignIn() {
       this.openSignIn = true;

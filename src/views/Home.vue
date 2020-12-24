@@ -7,8 +7,8 @@
 
         <div class="col-3" id="aeroportos">
           <p>Aeroportos</p>
-          <input id="partida" placeholder="Partida" />
-          <input id="destino" placeholder="Destino" />
+          <input id="partida" placeholder="Partida" v-model="ship" />
+          <input id="destino" placeholder="Destino" v-model="dest"/>
         </div>
 
         <div class="col-2" id="ocupantes">
@@ -46,7 +46,7 @@
           <p>Ida</p>
           <input type="date" id="data_ida" name="data_ida" />
           <br />
-          <router-link  to="/resultados"><button id="buscar">Buscar</button></router-link>
+          <router-link to="/resultados"><button @click="makeSearch" id="buscar">Buscar</button></router-link>
         </div>
       </div>
 
@@ -68,6 +68,7 @@
 <script>
 // @ is an alias to /src
 import SuggestionsCards from '@/components/SuggestionsCards.vue'
+import axios from 'axios';
 
 export default {
   name: "Home",
@@ -78,6 +79,9 @@ export default {
     return {
       adultos: 0,
       criancas: 0,
+      ship: "",
+      dest: "",
+      result: []
     };
   },
   methods: {
@@ -93,6 +97,14 @@ export default {
     remove_crianca() {
       if (this.criancas >= 1) this.criancas--;
     },
+    makeSearch(){
+      const shipement = this.ship ? this.ship : "";
+      const destination = this.dest ? this.dest : "";
+
+      axios.get(`http://localhost:5000/flight?dest=${destination}&ship=${shipement}`)
+      .then(res => this.result = res.data)
+      .catch(e => console.error(e))
+    }
   },
 };
 </script>
