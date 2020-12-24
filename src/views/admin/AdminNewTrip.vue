@@ -36,6 +36,14 @@
             </div>
             <input v-model="estimated_time" type="text" class="form-control" placeholder="Tempo estimado de voo" required />
           </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">
+                <img src="../../assets/icon/time.svg" class="w-20" />
+              </span>
+            </div>
+            <input v-model="ticket_price" type="number" class="form-control" placeholder="Preço por passagem" required />
+          </div>
         </div>
         <div>
           <div class="input-group">
@@ -84,7 +92,7 @@ export default {
       limit: 0,
       airline_id: 0,
       status: "ativo",
-      ticket_price: 150.00,
+      ticket_price: 0.0,
       image: "",
       company_name: ""
     };
@@ -125,5 +133,9 @@ export default {
   border-radius: 5px;
   color: #eff1f8;
   border: none;
+}
+.dollar {
+  width: 15;
+  height: 15;
 }
 </style>
