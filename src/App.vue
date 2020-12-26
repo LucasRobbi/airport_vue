@@ -209,7 +209,10 @@ header {
   background: #eff1f8;
   border-left: none;
 }
-
+.edit{
+  display: flex;
+  justify-content: "spance-between"
+}
 #inicio {
   text-align: Center;
 }

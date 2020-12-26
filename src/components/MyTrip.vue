@@ -18,7 +18,13 @@
         <span class="embarque-texto">Tempo estimado: <span class='response'>{{myTrip.estimated_time}}</span></span>
         <span class="preco">R$ {{myTrip.ticket_price}}</span>
       </div>
-      <div class="cancelamento">
+      <div v-if="admin == true" class="cancelamento">
+        <span class="edit-btn">Editar voo</span>
+      </div>
+      <div v-if="admin == true" class="excluir">
+        <span class="cancel">Excluir voo</span>
+      </div>
+      <div v-else class="cancelamento">
         <span class="cancel">Solicitar cancelamento</span>
       </div>
     </div>
@@ -34,10 +40,13 @@ export default {
   data () {
     return {
        myTrips: [],
+       admin: false
     };
   },
   mounted() {    
         const token = sessionStorage.getItem('user_token');
+        const admin = sessionStorage.getItem('user_type');
+        this.admin = admin && admin == true ? true : false;
         axios.get('http://localhost:5000/user/tickets', { headers: { Authorization: `bearer ${token}` } })
         .then(res => this.myTrips = res.data)
         .catch(e => console.error(e))
@@ -46,3 +55,14 @@ export default {
     }
 }
 </script>
+
+<style>
+.excluir{
+  display: flex;
+  justify-content: "flex-start"
+}
+.edit-btn{
+  color: #e1ff00;
+  cursor: pointer;
+}
+</style>
