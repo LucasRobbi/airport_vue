@@ -56,7 +56,7 @@ export default {
         headers: { Authorization: `bearer ${token}` }
       })
       .then(res => {
-        if(res.status == 200) window.location.pathname == '/';
+        if(res.status == 200) window.location.pathname == '/admin';
       })
       .catch(e => {
         if(e.response.status == 401) return this.$swal('Algo deu errado', 'Você não tem permissão para fazer isso', 'warning')

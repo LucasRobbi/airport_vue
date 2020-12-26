@@ -68,6 +68,7 @@ export default {
     },
     logout() {
       sessionStorage.removeItem('user_token');
+      sessionStorage.removeItem('user_type');
       window.location.pathname = '/';
     },
     deleteUser(){

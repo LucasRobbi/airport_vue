@@ -56,7 +56,8 @@ export default {
     return {
       isAdmin: false,
       openSignIn: false,
-      openLogIn: false
+      openLogIn: false,
+      type: ""
     };
   },
   components: {
@@ -82,6 +83,11 @@ export default {
       this.$refs["signInModal"].hide();
     }
   },
+  mounted(){
+    const type = sessionStorage.getItem('user_type');
+    this.type = type;
+    this.isAdmin = this.type && this.type == 'admin' ? true : false;
+  }
 };
 </script>
 

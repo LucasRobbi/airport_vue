@@ -19,13 +19,20 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "admin-home",
   data() {
     return {
-      user_name: "Lucas Robbi",
+      user_name: "",
     };
   },
+  mounted(){
+    const token = sessionStorage.getItem('user_token');
+    axios.get('http://localhost:5000/user', { headers: { Authorization: `bearer ${token}` } })
+    .then(res => this.user_name = res.data.name)
+    .catch(e => console.error(e))
+  }
 };
 </script>
 
