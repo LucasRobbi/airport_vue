@@ -37,7 +37,8 @@ const routes = [
   {
     path: '/resultados',
     name: 'Results',
-    component: Results
+    component: Results,
+    props: true,
   },
   {
     path: '/nova-companhia',

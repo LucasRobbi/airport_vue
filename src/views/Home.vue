@@ -46,7 +46,9 @@
           <p>Ida</p>
           <input type="date" id="data_ida" name="data_ida" />
           <br />
-          <router-link to="/resultados"><button @click="makeSearch" id="buscar">Buscar</button></router-link>
+          <router-link 
+            :to="{ name: 'Results', params: { ship: ship, dest: dest } }"
+            ><button @click="makeSearch" id="buscar">Buscar</button></router-link>
         </div>
       </div>
 
@@ -99,10 +101,14 @@ export default {
     },
     makeSearch(){
       const shipement = this.ship ? this.ship : "";
-      const destination = this.dest ? this.dest : "";
+      const destination = this.dest ?? "";
 
       axios.get(`http://localhost:5000/flight?dest=${destination}&ship=${shipement}`)
-      .then(res => this.result = res.data)
+      .then(res => {
+        // this.result = res.data
+        console.log(res.data)
+        this.result = ["oi", "tudo", "bem"]
+      })
       .catch(e => console.error(e))
     }
   },
