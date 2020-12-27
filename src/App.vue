@@ -7,6 +7,9 @@
           <router-link to="/admin"><img class="logo" src="./assets/logo.png"/></router-link>
         </div>
         <div class="links">
+          <button class="logIn" v-on:click="handleLogOut">
+             <img src="./assets/icon/fingerprint.svg" class="mr-1" /> Sair
+          </button>
           <router-link to="/nova-companhia"
             ><img src="./assets/icon/iconViagens.svg" class="mr-1" /> Companhia</router-link
           >
@@ -81,6 +84,11 @@ export default {
       this.openLogIn = false;
       this.$refs["logInModal"].hide();
       this.$refs["signInModal"].hide();
+    },
+    handleLogOut() {
+      sessionStorage.removeItem('user_token');
+      sessionStorage.removeItem('user_type');
+      window.location.pathname = '/';
     }
   },
   mounted(){

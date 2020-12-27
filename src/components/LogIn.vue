@@ -86,6 +86,8 @@ export default {
           this.type = res.data.type;
           sessionStorage.setItem('user_token', this.token)
           sessionStorage.setItem('user_type', this.type)
+
+          if(this.type === 'admin') window.location.pathname = '/admin';
         })
         .catch(e => console.error(e))
     },

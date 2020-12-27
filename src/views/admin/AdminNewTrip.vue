@@ -34,15 +34,20 @@
                 <img src="../../assets/icon/time.svg" />
               </span>
             </div>
-            <input v-model="estimated_time" type="text" class="form-control" placeholder="Tempo estimado de voo" required />
+            <input v-model="estimated_time" type="text" min="0" class="form-control" placeholder="Tempo estimado de voo" required />
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">
+                min
+              </span>
+            </div>
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupPrepend">
-                <img src="../../assets/icon/time.svg" class="w-20" />
+                <img src="../../assets/icon/dollar.svg" />
               </span>
             </div>
-            <input v-model="ticket_price" type="number" class="form-control" placeholder="Preço por passagem" required />
+            <input v-model="ticket_price" type="number" min="0" class="form-control" placeholder="Preço por passagem" required />
           </div>
         </div>
         <div>
