@@ -62,7 +62,7 @@ export default {
   justify-content: "flex-start"
 }
 .edit-btn{
-  color: #e1ff00;
+  color: #f5902c;
   cursor: pointer;
 }
 </style>
