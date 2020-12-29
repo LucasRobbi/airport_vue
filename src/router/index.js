@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import MyTrips from '../views/MyTrips.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Results from '../views/Results.vue'
+import Purchase from '../components/Purchase.vue'
 
 import AdminNewCompany from '../views/admin/AdminNewCompany.vue'
 import AdminNewTrip from '../views/admin/AdminNewTrip.vue'
@@ -44,6 +45,12 @@ const routes = [
     path: '/nova-companhia',
     name: 'AdminNewCompany',
     component: AdminNewCompany
+  },
+  {
+    path: '/compra',
+    name: 'Purchase',
+    component: Purchase,
+    props: true
   },
   {
     path: '/novo-voo',

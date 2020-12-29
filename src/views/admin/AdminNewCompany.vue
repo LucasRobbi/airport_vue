@@ -56,7 +56,10 @@ export default {
         headers: { Authorization: `bearer ${token}` }
       })
       .then(res => {
-        if(res.status == 200) window.location.pathname == '/admin';
+        if(res.status == 200){
+          this.$swal('Linha Aérea cadastrada com sucesso', 'Tudo pronto.', 'success')
+          return setTimeout(() => window.location.pathname == '/admin', 1000)
+        }
       })
       .catch(e => {
         if(e.response.status == 401) return this.$swal('Algo deu errado', 'Você não tem permissão para fazer isso', 'warning')

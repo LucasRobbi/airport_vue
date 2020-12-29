@@ -32,6 +32,13 @@
           >
           <span class="preco">R$ {{ myTrip.ticket_price }}</span>
         </div>
+        <div class="btn-compra">
+          <router-link :to="{name: 'Purchase', params: { ticket_price: myTrip.ticket_price, dest: myTrip.destination, ship: myTrip.shipment, ship_date: myTrip.ship_date }}">
+            <div class="btn">
+              <span>Comprar</span>
+            </div>
+          </router-link>          
+        </div>
       </div>
     </div>
   </div>
@@ -82,5 +89,15 @@ export default {
 <style>
 h1 {
   margin: 50px 0;
+}
+.btn-compra{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.btn{
+  background-color: rgb(236, 153, 97);
+  padding: 5px;
+  width: 200px;
 }
 </style>

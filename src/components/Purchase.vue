@@ -4,9 +4,9 @@
             <img src='../assets/icon/x.svg' class='x'/>
         </div>
         <div class='destination'>
-            <span class='dest-text'>São Paulo</span>
+            <span class='dest-text'>{{ship}}</span>
             <img src='../assets/icon/go_to.svg' alt='dest'/>
-            <span class='dest-text'>São Paulo</span>
+            <span class='dest-text'>{{dest}}</span>
         </div>
         <div class="passagens-compra">
             <span class="passagem">Passagens: </span>
@@ -23,12 +23,12 @@
         </div>
         <div class="embarque-compra">
             <span class="embarque-texto">Embarque no dia:</span>
-            <span class="preco">21/08</span>
+            <span class="preco">{{ship_date}}</span>
         </div>
         <div class="value-info">
             <div class="embarque-compra">
                 <span class="embarque-texto">valor da passagem:</span>
-                <span class="preco">R$ 200,00</span>
+                <span class="preco">R$ {{ticket_price}}</span>
             </div>
             <div class="embarque-compra">
                 <span class="embarque-texto">valor da passagem com desconto:</span>
@@ -55,6 +55,15 @@ export default {
      
     };
   },
+  props: {
+    ticket_price: Number,
+    ship: String,
+    dest: String,
+    ship_date: String
+  },
+  mounted(){
+      console.log('aaaa', this.ticket_price)
+  }
 };
 </script>
 
