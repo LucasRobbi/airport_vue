@@ -44,10 +44,10 @@
 
         <div class="col-3 col md-12" id="data" >
           <p>Ida</p>
-          <input type="date" id="data_ida" name="data_ida" />
+          <input v-model="date" type="text" id="data_ida" name="data_ida" placeholder="Dia/Mes/Ano"/>
           <br />
           <router-link 
-            :to="{ name: 'Results', params: { ship: ship, dest: dest } }"
+            :to="{ name: 'Results', params: { ship: ship, dest: dest, adult: adultos, kids: criancas, date: date } }"
             ><button @click="makeSearch" id="buscar">Buscar</button></router-link>
         </div>
       </div>
@@ -83,7 +83,8 @@ export default {
       criancas: 0,
       ship: "",
       dest: "",
-      result: []
+      result: [],
+      date: null
     };
   },
   methods: {

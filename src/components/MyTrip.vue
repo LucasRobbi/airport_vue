@@ -25,7 +25,7 @@
         <span class="cancel">Excluir voo</span>
       </div>
       <div v-else class="cancelamento">
-        <span class="cancel">Solicitar cancelamento</span>
+        <span @click="cancel(myTrip.ticket_id)" class="cancel">Solicitar cancelamento</span>
       </div>
     </div>
 
@@ -42,6 +42,20 @@ export default {
        myTrips: [],
        admin: false
     };
+  },
+  methods: {
+    cancel(id) {
+      console.log('opa', id)
+      const token = sessionStorage.getItem('user_token');
+      axios.put(`http://localhost:5000/ticket/cancel/${id}`, { headers: { Authorization: `bearer ${token}` } })
+      .then(res => {
+        if(res.status == 200) {
+          this.$swal('Cancelamento feito com sucesso', 'Compre mais', 'success');
+          return setTimeout(() => window.location.pathname = '/', 2000);
+        }
+      })
+      .catch(e => console.error(e))
+    }
   },
   mounted() {    
         const token = sessionStorage.getItem('user_token');

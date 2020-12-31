@@ -33,7 +33,7 @@
           <span class="preco">R$ {{ myTrip.ticket_price }}</span>
         </div>
         <div class="btn-compra">
-          <router-link :to="{name: 'Purchase', params: { ticket_price: myTrip.ticket_price, dest: myTrip.destination, ship: myTrip.shipment, ship_date: myTrip.ship_date }}">
+          <router-link :to="{name: 'Purchase', params: { flight_id: myTrip.id,ticket_price: myTrip.ticket_price, dest: myTrip.destination, ship: myTrip.shipment, ship_date: myTrip.ship_date, adult, kids }}">
             <div class="btn">
               <span>Comprar</span>
             </div>
@@ -64,14 +64,20 @@ export default {
   props: {
     ship: String,
     dest: String,
+    adult: Number,
+    kids: Number,
+    date: String
   },
   methods: {
     makeSearch() {
       const shipement = this.ship ?? "";
       const destination = this.dest ?? "";
+      const newDate = this.date ?? "";
+
+      console.log('aaa', newDate)
 
       axios
-        .get(`http://localhost:5000/flight?dest=${destination}&ship=${shipement}`)
+        .get(`http://localhost:5000/flight?dest=${destination}&ship=${shipement}&date=${newDate}`)
         .then((res) => {
           this.result = res.data;
           if (res.data.length === 0) this.hasNoResults = true;
