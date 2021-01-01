@@ -18,8 +18,8 @@
         <span class="embarque-texto">Tempo estimado: <span class='response'>{{myTrip.estimated_time}}</span></span>
         <span class="preco">R$ {{myTrip.ticket_price}}</span>
       </div>
-      <div v-if="admin == true" class="cancelamento">
-        <span class="edit-btn">Editar voo</span>
+      <div v-if="admin == true" class="cancelamento">       
+          <span class="edit-btn">Editar voo</span>       
       </div>
       <div v-if="admin == true" class="excluir">
         <span class="cancel">Excluir voo</span>
@@ -45,7 +45,6 @@ export default {
   },
   methods: {
     cancel(id) {
-      console.log('opa', id)
       const token = sessionStorage.getItem('user_token');
       axios.put(`http://localhost:5000/ticket/cancel/${id}`, { headers: { Authorization: `bearer ${token}` } })
       .then(res => {

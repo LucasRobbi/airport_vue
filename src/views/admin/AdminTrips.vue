@@ -25,7 +25,9 @@
               <span class="preco">R$ {{myTrip.ticket_price}}</span>
             </div>
             <div v-if="admin == true" class="cancelamento">
-              <span class="edit-btn">Editar voo</span>
+              <router-link :to="{ name: 'AdminNewTrip', params: { myTrip } }">
+                <span class="edit-btn">Editar voo</span>
+              </router-link>
             </div>
             <div v-if="admin == true" class="excluir">
               <span @click="deleteFlight(myTrip.id)" class="cancel">Excluir voo</span>

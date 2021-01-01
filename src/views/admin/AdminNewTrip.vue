@@ -102,7 +102,19 @@ export default {
       company_name: ""
     };
   },
-
+  props: {
+    myTrip: Object
+  },
+  mounted(){
+    this.ticket_price = this.myTrip.ticket_price
+    this.destination = this.myTrip.destination
+    this.shipment = this.myTrip.shipment
+    this.limit = this.myTrip.limit
+    this.ship_date = this.myTrip.ship_date
+    this.ship_time = this.myTrip.ship_time
+    this.estimated_time = this.myTrip.estimated_time
+    this.company_name = this.myTrip.company_name
+  },
   methods: {
     async createFlight() {
       try{
