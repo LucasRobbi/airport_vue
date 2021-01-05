@@ -61,7 +61,8 @@ const routes = [
   {
     path: '/novo-usuario',
     name: 'AdminNewUser',
-    component: AdminNewUser
+    component: AdminNewUser,
+    props: true
   },
   {
     path: '/voos',

@@ -12,7 +12,9 @@
         <div class="edit-area">
           <p class="my-account">Minha Conta</p>
           <div class="pensil-div">
-            <img class="pencil-edit" src="../assets/pencil.png" />
+            <router-link :to="{name: 'AdminNewUser', params: { username: name, user_email: email, user_cpf: cpf }}">
+              <img class="pencil-edit" src="../assets/pencil.png" />
+            </router-link>
           </div>
         </div>
         <p>Nome: {{name}}</p>

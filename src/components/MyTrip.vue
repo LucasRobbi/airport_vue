@@ -46,7 +46,7 @@ export default {
   methods: {
     cancel(id) {
       const token = sessionStorage.getItem('user_token');
-      axios.put(`http://localhost:5000/ticket/cancel/${id}`, { headers: { Authorization: `bearer ${token}` } })
+      axios.put(`http://localhost:5000/ticket/cancel/${id}`, null, { headers: { Authorization: `bearer ${token}` } })
       .then(res => {
         if(res.status == 200) {
           this.$swal('Cancelamento feito com sucesso', 'Compre mais', 'success');
