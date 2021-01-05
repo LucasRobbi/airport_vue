@@ -25,7 +25,7 @@
         </div>
         <div>
           <div class="d-flex">
-            <input v-model="ship_date" class="form-control withBorder mr-4" type="date" placeholder="Data" />
+            <input v-model="ship_date" class="form-control withBorder mr-4" type="text" placeholder="Data" />
             <input v-model="ship_time" class="form-control withBorder" type="time" placeholder="Horário" />
           </div>
           <div class="input-group">
@@ -34,7 +34,7 @@
                 <img src="../../assets/icon/time.svg" />
               </span>
             </div>
-            <input v-model="estimated_time" type="text" min="0" class="form-control" placeholder="Tempo estimado de voo" required />
+            <input v-model="estimated_time" type="number" min="0" class="form-control" placeholder="Tempo estimado de voo" required />
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupPrepend">
                 min
@@ -99,7 +99,8 @@ export default {
       status: "ativo",
       ticket_price: 0.0,
       image: "",
-      company_name: ""
+      company_name: "",
+      trip_id: 0
     };
   },
   props: {
@@ -114,6 +115,7 @@ export default {
     this.ship_time = this.myTrip.ship_time
     this.estimated_time = this.myTrip.estimated_time
     this.company_name = this.myTrip.company_name
+    this.trip_id = this.myTrip.id
   },
   methods: {
     async createFlight() {
@@ -121,12 +123,24 @@ export default {
          const token = sessionStorage.getItem('user_token');
          const { data } = await axios.get(`http://localhost:5000/airline/name/?name=${ this.company_name }`);
          const flight_body = { destination: this.destination, shipment: this.shipment, ship_date: this.ship_date, ship_time: this.ship_time, estimated_time: Number(this.estimated_time), limit: this.limit, airline_id: data.id, status: this.status, ticket_price: this.ticket_price, image: this.image }
-         const res = await axios.post('http://localhost:5000/flight', flight_body, { headers: { Authorization: `bearer ${token}` } })
+         
+         if(this.myTrip) {
+           console.log('aqui')
+           const res = await axios.put(`http://localhost:5000/flight/${this.trip_id}`, flight_body, { headers: { Authorization: `bearer ${token}` } })
 
-          if(res.status == 200) {
-            this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
-            return setTimeout(() => window.location.pathname = '/', 1000)
-          }
+            if(res.status == 200) {
+              this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
+              return setTimeout(() => window.location.pathname = '/', 1000)
+            }
+         }else{
+            const res = await axios.post('http://localhost:5000/flight', flight_body, { headers: { Authorization: `bearer ${token}` } })
+
+            if(res.status == 200) {
+              this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
+              return setTimeout(() => window.location.pathname = '/', 1000)
+            }
+         }
+         
 
       } catch(e){
         if(e.response.status == 401) return this.$swal('Algo deu errado', 'Você não tem permissão para fazer isso', 'warning')
