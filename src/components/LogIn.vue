@@ -89,7 +89,12 @@ export default {
 
           if(this.type === 'admin') window.location.pathname = '/admin';
         })
-        .catch(e => console.error(e))
+        .catch(e => {
+          if(e.response.status == 500){
+            this.$swal('Usuário não encontrado', 'Tente novamente', 'error')
+            return setTimeout(() => window.location.pathname='/', 1000);
+          }
+        })
     },
     showModal() {
       this.$refs["logInModal"].show();
