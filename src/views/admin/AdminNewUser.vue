@@ -74,7 +74,7 @@ export default {
   },
   mounted() {
     this.name = this.username
-    this.user_email = this.email
+    this.email = this.user_email
     this.user_cpf = this.cpf
   },
   methods: {
@@ -91,7 +91,7 @@ export default {
           .then(res => {
             if(res.status == 200) {
               this.$swal('Atualizado com sucesso', 'Dados atualizados', 'success')
-              return setTimeout(() => window.location.pathname = '/', 1000)
+              return setTimeout(() => window.location.pathname = '/admin', 1000)
             }
           })
           .catch(e => {

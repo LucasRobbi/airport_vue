@@ -130,14 +130,14 @@ export default {
 
             if(res.status == 200) {
               this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
-              return setTimeout(() => window.location.pathname = '/', 1000)
+              return setTimeout(() => window.location.pathname = '/admin', 1000)
             }
          }else{
             const res = await axios.post('http://localhost:5000/flight', flight_body, { headers: { Authorization: `bearer ${token}` } })
 
             if(res.status == 200) {
               this.$swal('Cadastrado com sucesso', 'Nova viagem adicionada', 'success')
-              return setTimeout(() => window.location.pathname = '/', 1000)
+              return setTimeout(() => window.location.pathname = '/admin', 1000)
             }
          }
          
