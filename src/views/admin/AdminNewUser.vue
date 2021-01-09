@@ -91,7 +91,7 @@ export default {
           .then(res => {
             if(res.status == 200) {
               this.$swal('Atualizado com sucesso', 'Dados atualizados', 'success')
-              return setTimeout(() => window.location.pathname = '/admin', 1000)
+              return setTimeout(() => window.location.pathname = '/minha-conta', 1000)
             }
           })
           .catch(e => {
@@ -107,7 +107,7 @@ export default {
           .then(res => {
             if(res.status == 200) {
               this.$swal('Cadastrado com sucesso', 'Novo admin adicionado', 'success')
-              return setTimeout(() => window.location.pathname = '/', 1000)
+              return setTimeout(() => window.location.pathname = '/admin', 1000)
             }
           })
           .catch(e => {
